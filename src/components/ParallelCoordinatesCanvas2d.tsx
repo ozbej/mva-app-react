@@ -1,19 +1,13 @@
 import React, { useRef, useEffect } from 'react';
 
-let data: any[] = [];
-
-for (let i: number = 0; i < 1000; i++) {
-  data.push(Array.from({length: 10}, () => Math.floor(Math.random() * 500)));
-}
-
-const ParallelCoordinatesCanvas2d = () => {
-  let ref: any = useRef(null);
+const ParallelCoordinatesCanvas2d = (props: any) => {
+  const ref: any = useRef(null);
 
   useEffect(() => {
-    let canvas: any = ref.current;
-    let context: any = canvas.getContext("2d");
+    const canvas: any = ref.current;
+    const context: any = canvas.getContext("2d");
 
-    data.forEach((dataItem: number[], i: number) => {
+    props.data.forEach((dataItem: number[], i: number) => {
       context.lineWidth = 1;
       context.beginPath();
       for (let i = 0; i < dataItem.length; i++) {
@@ -25,13 +19,13 @@ const ParallelCoordinatesCanvas2d = () => {
     });
   })
 
-  return <div style={{width: '1000px', height: '500px'}}>
-    <div>Canvas2d:</div>
+  return <>
+    <h2>Canvas2d:</h2>
     <canvas
     ref={ref}
     width={1000}
-    height={500} />
-  </div>
+    height={300} />
+  </>
 }
 
 export default ParallelCoordinatesCanvas2d;
