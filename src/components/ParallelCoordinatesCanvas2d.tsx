@@ -26,6 +26,6 @@ const ParallelCoordinatesCanvas2d = (props: any) => {
     width={1000}
     height={300} />
   </>
-}
+};
 
 export default ParallelCoordinatesCanvas2d;

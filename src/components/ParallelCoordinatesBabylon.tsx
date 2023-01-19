@@ -44,7 +44,7 @@ const ParallelCoordinatesBabylon = (props: any) => {
       scene.dispose();
       engine.dispose();
     }
-  }, []);
+  }, [props.data]);
 
   return <>
     <h2>Babylon:</h2>
@@ -53,6 +53,6 @@ const ParallelCoordinatesBabylon = (props: any) => {
       width={1000}
       height={300} />
     </>
-}
+};
 
 export default ParallelCoordinatesBabylon;

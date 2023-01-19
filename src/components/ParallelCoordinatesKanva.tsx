@@ -29,6 +29,6 @@ const ParallelCoordinatesKanva = (props: any) => {
       </Layer>
     </Stage>
   </>
-}
+};
 
 export default ParallelCoordinatesKanva;
