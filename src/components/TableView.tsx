@@ -1,21 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
 
 interface TableViewProps {
   header: any[];
   rows: any[];
 }
  
-function TableView({header, rows}: TableViewProps) {
-
-  const headerKeys = Object.keys(Object.assign({}, ...rows));
- 
-  return (
+function TableView({header, rows}: TableViewProps) { 
+  return (<>
+    <h3>Table View</h3>
     <div style={{ textAlign: "center", height: "200px", overflowY: "scroll", backgroundColor: "lightgray" }}> 
       <table>
         <thead>
           <tr key={"header"}>
-            {headerKeys.map((key) => (
-              <th>{key}</th>
+            {header.map((item: any) => (
+              <th>{item}</th>
             ))}
           </tr>
         </thead>
@@ -31,7 +29,7 @@ function TableView({header, rows}: TableViewProps) {
         </tbody>
       </table>
     </div>
-  );
+  </>);
 }
 
 export default TableView;
