@@ -47,11 +47,11 @@ const ParallelCoordinatesBabylon = (props: any) => {
   }, [props.data]);
 
   return <>
-    <h2>Babylon:</h2>
+    <p>Babylon:</p>
     <canvas
       ref={ref}
       width={1000}
-      height={300} />
+      height={200} />
     </>
 };
 

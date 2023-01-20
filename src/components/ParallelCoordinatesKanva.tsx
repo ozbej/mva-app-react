@@ -13,8 +13,8 @@ const ParallelCoordinatesKanva = (props: any) => {
   }
 
   return <>
-    <h2>KanvaJS:</h2>
-    <Stage width={1000} height={300}>
+    <p>KanvaJS:</p>
+    <Stage width={1000} height={200}>
       <Layer>
         <Group>
           {props.data.map((dataItem: number[], i: number) => {

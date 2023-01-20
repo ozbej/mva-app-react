@@ -20,11 +20,11 @@ const ParallelCoordinatesCanvas2d = (props: any) => {
   })
 
   return <>
-    <h2>Canvas2d:</h2>
+    <p>Canvas2d:</p>
     <canvas
     ref={ref}
     width={1000}
-    height={300} />
+    height={200} />
   </>
 };
 
