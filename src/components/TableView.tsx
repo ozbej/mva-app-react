@@ -13,7 +13,7 @@ function TableView({header, rows}: TableViewProps) {
         <thead>
           <tr key={"header"}>
             {header.map((item: any) => (
-              <th>{item}</th>
+              <th>{item.title}</th>
             ))}
           </tr>
         </thead>
