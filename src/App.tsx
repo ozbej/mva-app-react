@@ -1,86 +1,33 @@
-import React, { useEffect, useState } from 'react';
-import Dexie from 'dexie';
-
-import ParallelCoordinatesKanva from './components/ParallelCoordinatesKanva';
-import ParallelCoordinatesCanvas2d from './components/ParallelCoordinatesCanvas2d';
-import ParallelCoordinatesBabylon from './components/ParallelCoordinatesBabylon';
-import FileUploader from './components/FileUploader';
-import TableView from './components/TableView';
-
-let randomData: any[] = [];
-
-for (let i: number = 0; i < 1000; i++) {
-  randomData.push(Array.from({length: 10}, () => Math.floor(Math.random() * 200)));
-}
+import React, { useState, useEffect } from 'react';
+import logo from './logo.svg';
+import './App.css';
 
 function App() {
-  const [header, setHeader] = useState([]) as any[];
-  const [rows, setRows] = useState([]) as any[];
-
-  let db: Dexie = new Dexie("dataset");
+  const [currentTime, setCurrentTime] = useState(0);
 
   useEffect(() => {
-    Dexie.exists("dataset")
-    .then((exists: boolean) => {
-      if (!exists) {
-        console.log("DB initialized");
-        db.version(1).stores({
-          rows: "++id",
-          headerRow: "++id, title"
-        });
-      }
-    })
-    .then(() => db.open())
-    .then((data: any) => {
-      console.log("DB opened");
-      db.table('rows').toArray().then(data => setRows(data));
-      db.table('headerRow').toArray().then(data => setHeader(data));
-    })
-    .catch(err => console.log(err.message));
-  }, [])
-
-  const datasetUploaded = async (headerRow: any[], rows: any[]) => {
-    // Close previous db and delete it
-    await db.close();
-    await db.delete();
-
-    // Set indexing of db to all columns
-    let indexString: string = "++id";
-    for (let header of headerRow) {
-        indexString += `, ${header.title}`;
-    }
-
-    
-    db.version(1).stores({
-      rows: indexString,
-      headerRow: "++id, title"
+    fetch('/time').then(res => res.json()).then(data => {
+      setCurrentTime(data.time);
     });
-
-    console.log(indexString);
-
-    db.open().then(data => console.log("DB re-opened"));
-    
-    // Insert headerRow and rows to db
-    db.table('headerRow').bulkAdd(headerRow);
-    db.table('rows').bulkAdd(rows);
-
-    // Set headeRow and rows
-    db.table('headerRow').toArray().then(data => {
-      setHeader(data)
-    });
-    db.table('rows').toArray().then(data => {
-      setRows(data)
-    });
-  }
+  }, []);
 
   return (
     <div className="App">
-      <h1>MVA App</h1>
-      <FileUploader setHeader={setHeader} setRows={setRows} datasetUploaded={datasetUploaded} />
-      <TableView header={header} rows={rows}/>
-      <ParallelCoordinatesKanva data={randomData} />
-      <ParallelCoordinatesCanvas2d data={randomData} />
-      <ParallelCoordinatesBabylon data={randomData} />
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+        <p>The current time is {currentTime}.</p>
+      </header>
     </div>
   );
 }

@@ -12,17 +12,17 @@ function TableView({header, rows}: TableViewProps) {
       <table>
         <thead>
           <tr key={"header"}>
-            {header.map((item: any) => (
-              <th>{item.title}</th>
+            {header.map((item: any, i: number) => (
+              <th key={i}>{item.title}</th>
             ))}
           </tr>
         </thead>
 
         <tbody>
-          {rows.map((item: any) => (
+          {rows.map((item: any, i: number) => (
             <tr key={item.id}>
-              {Object.values(item).map((val: any) => (
-                <td>{val}</td>
+              {Object.values(item).map((val: any, j: number) => (
+                <td key={`${i}-${j}`}>{val}</td>
               ))}
             </tr>
           ))}

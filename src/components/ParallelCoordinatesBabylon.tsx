@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import { Engine, Scene, Vector3, MeshBuilder, UniversalCamera } from '@babylonjs/core';
+import { Engine, Scene, Vector3, MeshBuilder, UniversalCamera, GPUParticleSystem } from '@babylonjs/core';
 import { MultiLine, AdvancedDynamicTexture } from '@babylonjs/gui';
 
 const ParallelCoordinatesBabylon = (props: any) => {
@@ -16,6 +16,7 @@ const ParallelCoordinatesBabylon = (props: any) => {
   }
 
   useEffect(() => {
+    console.log(`GPU particles: ${GPUParticleSystem.IsSupported}`)
     const engine = new Engine(ref.current, true);
     const scene = new Scene(engine);
 

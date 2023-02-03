@@ -1,19 +1,32 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { createRoot } from 'react-dom/client';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./pages/Layout";
+import HomePage from "./pages/HomePage";
+import ParallelCoordinatesKanvaPage from "./pages/ParalellCoordinatesKanvaPage";
+import ParalellCoordinatesCanvas2dPage from "./pages/ParalellCoordinatesCanvas2dPage";
+import ParalellCoordinatesBabylonPage from "./pages/ParalellCoordinatesBabylonPage";
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+let randomData: any[] = [];
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+for (let i: number = 0; i < 1000; i++) {
+  randomData.push(Array.from({length: 10}, () => Math.floor(Math.random() * 200)));
+}
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<HomePage />} />
+          <Route path="parallel-coordinates-kanva" element={<ParallelCoordinatesKanvaPage data={randomData} />} />
+          <Route path="parallel-coordinates-canvas2d" element={<ParalellCoordinatesCanvas2dPage data={randomData} />} />
+          <Route path="parallel-coordinates-babylon" element={<ParalellCoordinatesBabylonPage data={randomData} />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
+}
+
+const container: HTMLElement | null = document.getElementById('root');
+const root = createRoot(container!);
+root.render(<App />);
