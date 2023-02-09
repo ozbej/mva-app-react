@@ -27,29 +27,43 @@ function FileUploader({ setHeader, setRows, datasetUploaded }: FileUploaderProps
       return obj;
     });
 
-    console.log(array);
-
-    let headerRow: any[] = [];
-    csvHeader.forEach((item: string) => {
-      if (parseInt(item.charAt(0))) item = "$" + item;
-      headerRow.push({title: item})
-    });
+    let headerRow: any[] = parseHeaderRow(csvHeader, array[0]);
 
     datasetUploaded(headerRow, array);
   };
+
+  const parseHeaderRow = (headerRow: any[], firstRow: any): any[] => {
+    let headerRowNew: any[] = [];
+    let currType: string = "";
+    let firstRowValue: string = "";
+    headerRow.forEach((item: string) => {
+      // Add $ if column starts with number (indexedDB convention)
+      if (parseInt(item.charAt(0))) item = "$" + item;
+
+      // Determine row type (string | int | float)
+      firstRowValue = firstRow[item];
+      currType = "string";
+      if (parseInt(firstRowValue)) currType = "int";
+      else if (parseFloat(firstRowValue)) currType = "float";
+
+      headerRowNew.push({title: item, type: currType});
+    });
+
+    return headerRowNew;
+  }
  
-   const handleOnSubmit = (e: any): void => {
-     e.preventDefault();
- 
-     if (file) {
-       fileReader.onload = function (event: any) {
-         const text = event.target.result;
-         csvFileToArray(text);
-       };
- 
-       fileReader.readAsText(file);
-     }
-   };
+  const handleOnSubmit = (e: any): void => {
+    e.preventDefault();
+
+    if (file) {
+      fileReader.onload = function (event: any) {
+        const text = event.target.result;
+        csvFileToArray(text);
+      };
+
+      fileReader.readAsText(file);
+    }
+  };
     
   return (
     <div style={{ textAlign: "center" }}>

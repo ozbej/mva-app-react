@@ -5,7 +5,7 @@ interface TableViewProps {
   rows: any[];
 }
  
-function TableView({header, rows}: TableViewProps) { 
+function TableView({header, rows}: TableViewProps) {
   return (<>
     <h3>Table View</h3>
     <div style={{ textAlign: "center", height: "200px", overflowY: "scroll", backgroundColor: "lightgray" }}> 
@@ -20,8 +20,8 @@ function TableView({header, rows}: TableViewProps) {
 
         <tbody>
           {rows.map((item: any, i: number) => (
-            <tr key={item.id}>
-              {Object.values(item).map((val: any, j: number) => (
+            <tr key={i}>
+              {item.map((val: any, j: number) => (
                 <td key={`${i}-${j}`}>{val}</td>
               ))}
             </tr>

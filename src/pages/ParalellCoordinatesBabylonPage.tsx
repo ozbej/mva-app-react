@@ -3,7 +3,9 @@ import ParallelCoordinatesBabylon from '../components/ParallelCoordinatesBabylon
 
 function ParallelCoordinatesBabylonPage(props: any) {
   return (
-    <ParallelCoordinatesBabylon data={props.data} />
+    <>
+      <ParallelCoordinatesBabylon data={props.data} />
+    </>
   );
 }
 

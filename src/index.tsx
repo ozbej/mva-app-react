@@ -8,11 +8,12 @@ import ParalellCoordinatesBabylonPage from "./pages/ParalellCoordinatesBabylonPa
 
 let randomData: any[] = [];
 
-for (let i: number = 0; i < 1000; i++) {
-  randomData.push(Array.from({length: 10}, () => Math.floor(Math.random() * 200)));
+for (let i: number = 0; i < 100; i++) {
+  randomData.push(Array.from({length: 20}, () => Math.floor(Math.random() * 200)));
 }
 
 export default function App() {
+
   return (
     <BrowserRouter>
       <Routes>
