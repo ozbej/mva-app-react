@@ -1,10 +1,11 @@
+import { KonvaEventObject } from 'konva/lib/Node';
 import React, { useEffect, useState } from 'react';
 import { Stage, Layer, Group, Line, Text } from 'react-konva';
 
 const ParallelCoordinatesKanva = (props: any) => {
-  const x = 50;
+  const x = 70;
   const y = 50;
-  const width: number = 1500;
+  const width: number = 1900;
   const height: number = 600;
 
   const [numAxis, setNumAxis] = useState(0); // Number of axis
@@ -12,37 +13,49 @@ const ParallelCoordinatesKanva = (props: any) => {
   const [axis, setAxis] = useState([]) as any[]; // Axis lines coordinates
   const [axisTitles, setAxisTitles] = useState([]) as any[]; // Axis titles and their coordinates
   const [axisScales, setAxisScales] = useState([]) as any[]; // Axis scales
+  const [lines, setLines] = useState([]) as any[]; // Data lines
 
   useEffect(() => {
+    console.log("COMPONENT LOADED");
+    // Set the number of axes
     const numAxisTemp = props.data[0].length;
-    const axisSpacingTemp = width / (numAxisTemp + 1);
-    const lineSpacingTemp = height / (props.data.length + 1);
-
     setNumAxis(numAxisTemp);
+
+    // Set the spacing between axes
+    const axisSpacingTemp = width / (numAxisTemp + 1);
     setAxisSpacing(axisSpacingTemp);
 
+    // Set the lines data points
+    let linesTemp: any[] = [];
+    props.data.forEach((line: number[], i: number) => {
+      linesTemp.push({
+        key: i,
+        points: getLine(line),
+        color: "blue",
+        width: 1,
+      })
+    })
+    setLines(linesTemp);
+
+    // Set the scales of all axes
     setAxisScales(getMinMaxByColumn(props.data));
 
+    // Set all axes and their titles
     let axisTemp: any[] = [];
     let axisTitlesTemp: any[] = [];
-
     for (let i: number = 0; i < numAxisTemp; i++) {
       axisTemp.push({ 
         points: [x + i * axisSpacingTemp, y, x + i * axisSpacingTemp, y + height],
         stroke: "black",
         strokeWidth: 1,
       })
-
       axisTitlesTemp.push({
-        x: x + i * axisSpacingTemp,
+        x: x + i * axisSpacingTemp - 30,
         y: 10,
-        text: `Dimension ${i + 1}`,
+        text: props && props.dataHeaders ? props.dataHeaders[i] : `Dim-${i+1}`,
         fontSize: 16,
-        align: 'center',
-        rotation: 45
       })
     }
-
     setAxis(axisTemp);
     setAxisTitles(axisTitlesTemp);
   }, [])
@@ -54,8 +67,7 @@ const ParallelCoordinatesKanva = (props: any) => {
   function getLine(line: number[]): number[] {
     let lineNew: number[] = [];
     for (let i: number = 0; i < numAxis; i++) {
-      lineNew.push(x + i * axisSpacing, y + height * getPercentage(line[i], axisScales[i].min, axisScales[i].max));
-      //lineNew.push(line[i]);
+      lineNew.push(x + i * axisSpacing, y + height * (1 - getPercentage(line[i], axisScales[i].min, axisScales[i].max)));
     }
     return lineNew;
   }
@@ -77,9 +89,24 @@ const ParallelCoordinatesKanva = (props: any) => {
     return result;
   }
 
+  function handleMouseOver(e: KonvaEventObject<MouseEvent>) {
+    const updatedLines = [...lines];
+    console.log(e.target.index);
+    updatedLines[e.target.index].color = 'red';
+    updatedLines[e.target.index].width = 5;
+    setLines(updatedLines);
+  }
+
+  function handleMouseLeave(e: KonvaEventObject<MouseEvent>) {
+    const updatedLines = [...lines];
+    updatedLines[e.target.index].color = 'blue';
+    updatedLines[e.target.index].width = 1;
+    setLines(updatedLines);
+  }
+
   return <>
     <p>KanvaJS:</p>
-    <Stage width={width} height={height}>
+    <Stage width={width} height={height+50}>
       <Layer>
         <Group>
           {axis.map((line: any, index: number) => {
@@ -97,18 +124,18 @@ const ParallelCoordinatesKanva = (props: any) => {
               y={axisTitle.y}
               text={axisTitle.text}
               fontSize={axisTitle.fontSize}
-              align={axisTitle.align}
-              rotation={axisTitle.rotation}
             />
           })}
         </Group>
         <Group>
-          {props.data.map((line: number[], i: number) => {
+          {lines.map((line: any, i: number) => {
             return <Line
-              key={i}
-              points={getLine(line)}
-              stroke={'blue'}
-              strokeWidth={1}
+              key={line.key}
+              points={line.points}
+              stroke={line.color}
+              strokeWidth={line.width}
+              onMouseOver={handleMouseOver}
+              onMouseLeave={handleMouseLeave}
             />
           })}
         </Group>

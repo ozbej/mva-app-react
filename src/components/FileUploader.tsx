@@ -40,11 +40,10 @@ function FileUploader({ setHeader, setRows, datasetUploaded }: FileUploaderProps
       // Add $ if column starts with number (indexedDB convention)
       if (parseInt(item.charAt(0))) item = "$" + item;
 
-      // Determine row type (string | int | float)
+      // Determine row type (string or number)
       firstRowValue = firstRow[item];
       currType = "string";
-      if (parseInt(firstRowValue)) currType = "int";
-      else if (parseFloat(firstRowValue)) currType = "float";
+      if (!isNaN(Number(firstRowValue))) currType = "number";
 
       headerRowNew.push({title: item, type: currType});
     });

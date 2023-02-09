@@ -15,6 +15,7 @@ function Home() {
  const [header, setHeader] = useState([]) as any[];
  const [rows, setRows] = useState([]) as any[];
  const [data, setData] = useState([]) as any[];
+ const [dataHeaders, setDataHeaders] = useState([]) as any[];
 
  let db: Dexie = new Dexie("dataset");
 
@@ -81,18 +82,20 @@ function Home() {
   if (header && rows && header.length > 0 && rows.length > 0) {
     let dataTemp: any[] = [];
     let currRow: number[] = [];
+    let dataHeadersTemp: string[] = [];
+
+    header.forEach((item: any, i: number) => {
+      if (item.type === "number") dataHeadersTemp.push(item.title);
+    })
+    setDataHeaders(dataHeadersTemp);
 
     rows.forEach((row: any, i: number) => {
       currRow = [];
       row.forEach((value: any, j: number) => {
-        if (header[j].type === "int") currRow.push(parseInt(value));
-        else if (header[j].type === "float") currRow.push(parseFloat(value));
+        if (header[j].type === "number") currRow.push(Number(value));
       })
       dataTemp.push(currRow);
     });
-
-    console.log(header);
-
     setData(dataTemp);
   }
  }, [header, rows])
@@ -102,7 +105,7 @@ function Home() {
       <h1>MVA App</h1>
       <FileUploader setHeader={setHeader} setRows={setRows} datasetUploaded={datasetUploaded} />
       <TableView header={header} rows={rows}/>
-      {data && data.length !== 0 ? <ParallelCoordinatesKanva data={data} /> : ""}
+      {data && data.length !== 0 ? <ParallelCoordinatesKanva data={data} dataHeaders={dataHeaders} /> : <></>}
     </div>
   );
 }
