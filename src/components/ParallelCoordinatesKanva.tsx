@@ -1,6 +1,6 @@
 import { KonvaEventObject } from 'konva/lib/Node';
 import React, { useEffect, useState } from 'react';
-import { Stage, Layer, Group, Line, Text } from 'react-konva';
+import { Stage, Layer, Group, Line, Text, RegularPolygon } from 'react-konva';
 
 const ParallelCoordinatesKanva = (props: any) => {
   const x = 70;
@@ -16,7 +16,6 @@ const ParallelCoordinatesKanva = (props: any) => {
   const [lines, setLines] = useState([]) as any[]; // Data lines
 
   useEffect(() => {
-    console.log("COMPONENT LOADED");
     // Set the number of axes
     const numAxisTemp = props.data[0].length;
     setNumAxis(numAxisTemp);
@@ -25,20 +24,9 @@ const ParallelCoordinatesKanva = (props: any) => {
     const axisSpacingTemp = width / (numAxisTemp + 1);
     setAxisSpacing(axisSpacingTemp);
 
-    // Set the lines data points
-    let linesTemp: any[] = [];
-    props.data.forEach((line: number[], i: number) => {
-      linesTemp.push({
-        key: i,
-        points: getLine(line),
-        color: "blue",
-        width: 1,
-      })
-    })
-    setLines(linesTemp);
-
     // Set the scales of all axes
-    setAxisScales(getMinMaxByColumn(props.data));
+    const axisScalesTemp: any[] = getMinMaxByColumn(props.data);
+    setAxisScales(axisScalesTemp);
 
     // Set all axes and their titles
     let axisTemp: any[] = [];
@@ -58,13 +46,26 @@ const ParallelCoordinatesKanva = (props: any) => {
     }
     setAxis(axisTemp);
     setAxisTitles(axisTitlesTemp);
+
+    // Set the lines data points
+    let linesTemp: any[] = [];
+    props.data.forEach((line: number[], i: number) => {
+      linesTemp.push({
+        key: i,
+        points: getLine(line, numAxisTemp, axisSpacingTemp, axisScalesTemp),
+        color: "blue",
+        width: 2,
+        opacity: 0.3,
+      })
+    })
+    setLines(linesTemp);
   }, [])
 
   function getPercentage(value: number, min: number, max: number): number {
     return (value - min) / (max - min);
   }
 
-  function getLine(line: number[]): number[] {
+  function getLine(line: number[], numAxis: number, axisSpacing: number, axisScales: any[]): number[] {
     let lineNew: number[] = [];
     for (let i: number = 0; i < numAxis; i++) {
       lineNew.push(x + i * axisSpacing, y + height * (1 - getPercentage(line[i], axisScales[i].min, axisScales[i].max)));
@@ -90,25 +91,67 @@ const ParallelCoordinatesKanva = (props: any) => {
   }
 
   function handleMouseOver(e: KonvaEventObject<MouseEvent>) {
+    const index: number = e.target.index;
     const updatedLines = [...lines];
-    console.log(e.target.index);
-    updatedLines[e.target.index].color = 'red';
-    updatedLines[e.target.index].width = 5;
+    updatedLines[index].color = 'red';
+    updatedLines[index].width = 5;
+    updatedLines[index].opacity = 1;
     setLines(updatedLines);
   }
 
   function handleMouseLeave(e: KonvaEventObject<MouseEvent>) {
+    const index: number = e.target.index;
     const updatedLines = [...lines];
-    updatedLines[e.target.index].color = 'blue';
-    updatedLines[e.target.index].width = 1;
+    updatedLines[index].color = 'blue';
+    updatedLines[index].width = 2;
+    updatedLines[index].opacity = 0.3;
     setLines(updatedLines);
   }
 
   return <>
     <p>KanvaJS:</p>
-    <Stage width={width} height={height+50}>
+    <Stage width={width} height={height+100}>
       <Layer>
         <Group>
+          <RegularPolygon
+            x={x}
+            y={y-10}
+            key={"filter-upper"}
+            sides={3}
+            radius={10}
+            fill={"black"}
+            opacity={1}
+            rotation={180}
+            draggable
+            dragBoundFunc={(pos) => {
+              let yTemp = pos.y;
+              if (yTemp < y - 10) yTemp = y - 10;
+              else if (yTemp > height + y - 10) yTemp = height + y - 10;
+              return {
+                x: x,
+                y: yTemp
+              }
+            }}
+          />
+          <RegularPolygon
+            x={x}
+            y={y+height+10}
+            key={"filter-lower"}
+            sides={3}
+            radius={10}
+            fill={"black"}
+            opacity={1}
+            draggable
+            dragBoundFunc={(pos) => {
+              let yTemp = pos.y;
+              if (yTemp < y + 10) yTemp = y + 10;
+              else if (yTemp > height + y + 10) yTemp = height + y + 10;
+              return {
+                x: x,
+                y: yTemp
+              }
+            }}
+          />
           {axis.map((line: any, index: number) => {
             return <Line 
               key={`axis-${index}`}
@@ -134,6 +177,7 @@ const ParallelCoordinatesKanva = (props: any) => {
               points={line.points}
               stroke={line.color}
               strokeWidth={line.width}
+              opacity={line.opacity}
               onMouseOver={handleMouseOver}
               onMouseLeave={handleMouseLeave}
             />
