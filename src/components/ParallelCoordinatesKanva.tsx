@@ -8,21 +8,16 @@ const ParallelCoordinatesKanva = (props: any) => {
   const width: number = 1900;
   const height: number = 600;
 
-  const [numAxis, setNumAxis] = useState(0); // Number of axis
-  const [axisSpacing, setAxisSpacing] = useState(0); // Axis spacing based on width and numAxis
-  const [axis, setAxis] = useState([]) as any[]; // Axis lines coordinates
-  const [axisTitles, setAxisTitles] = useState([]) as any[]; // Axis titles and their coordinates
+  const [axis, setAxis] = useState([]) as any[]; // Axis lines
   const [axisScales, setAxisScales] = useState([]) as any[]; // Axis scales
   const [lines, setLines] = useState([]) as any[]; // Data lines
 
   useEffect(() => {
     // Set the number of axes
-    const numAxisTemp = props.data[0].length;
-    setNumAxis(numAxisTemp);
+    const numAxis = props.data[0].length;
 
     // Set the spacing between axes
-    const axisSpacingTemp = width / (numAxisTemp + 1);
-    setAxisSpacing(axisSpacingTemp);
+    const axisSpacing = width / (numAxis + 1);
 
     // Set the scales of all axes
     const axisScalesTemp: any[] = getMinMaxByColumn(props.data);
@@ -30,29 +25,23 @@ const ParallelCoordinatesKanva = (props: any) => {
 
     // Set all axes and their titles
     let axisTemp: any[] = [];
-    let axisTitlesTemp: any[] = [];
-    for (let i: number = 0; i < numAxisTemp; i++) {
+    let axisLimitsTemp: any[] = [];
+    for (let i: number = 0; i < numAxis; i++) {
       axisTemp.push({ 
-        points: [x + i * axisSpacingTemp, y, x + i * axisSpacingTemp, y + height],
-        stroke: "black",
-        strokeWidth: 1,
-      })
-      axisTitlesTemp.push({
-        x: x + i * axisSpacingTemp - 30,
-        y: 10,
+        points: [x + i * axisSpacing, y, x + i * axisSpacing, y + height],
         text: props && props.dataHeaders ? props.dataHeaders[i] : `Dim-${i+1}`,
-        fontSize: 16,
+        limitUpper: y,
+        limitLower: y + height,
       })
     }
     setAxis(axisTemp);
-    setAxisTitles(axisTitlesTemp);
 
     // Set the lines data points
     let linesTemp: any[] = [];
     props.data.forEach((line: number[], i: number) => {
       linesTemp.push({
         key: i,
-        points: getLine(line, numAxisTemp, axisSpacingTemp, axisScalesTemp),
+        points: getLine(line, numAxis, axisSpacing, axisScalesTemp),
         color: "blue",
         width: 2,
         opacity: 0.3,
@@ -108,68 +97,14 @@ const ParallelCoordinatesKanva = (props: any) => {
     setLines(updatedLines);
   }
 
+  function filterLines() {
+    
+  }
+
   return <>
     <p>KanvaJS:</p>
     <Stage width={width} height={height+100}>
       <Layer>
-        <Group>
-          <RegularPolygon
-            x={x}
-            y={y-10}
-            key={"filter-upper"}
-            sides={3}
-            radius={10}
-            fill={"black"}
-            opacity={1}
-            rotation={180}
-            draggable
-            dragBoundFunc={(pos) => {
-              let yTemp = pos.y;
-              if (yTemp < y - 10) yTemp = y - 10;
-              else if (yTemp > height + y - 10) yTemp = height + y - 10;
-              return {
-                x: x,
-                y: yTemp
-              }
-            }}
-          />
-          <RegularPolygon
-            x={x}
-            y={y+height+10}
-            key={"filter-lower"}
-            sides={3}
-            radius={10}
-            fill={"black"}
-            opacity={1}
-            draggable
-            dragBoundFunc={(pos) => {
-              let yTemp = pos.y;
-              if (yTemp < y + 10) yTemp = y + 10;
-              else if (yTemp > height + y + 10) yTemp = height + y + 10;
-              return {
-                x: x,
-                y: yTemp
-              }
-            }}
-          />
-          {axis.map((line: any, index: number) => {
-            return <Line 
-              key={`axis-${index}`}
-              points={line.points}
-              stroke={line.stroke}
-              strokeWidth={line.strokeWidth}
-            />
-          })}
-          {axisTitles.map((axisTitle: any, index: number) => {
-            return <Text 
-            key={`axis-title-${index}`}
-              x={axisTitle.x}
-              y={axisTitle.y}
-              text={axisTitle.text}
-              fontSize={axisTitle.fontSize}
-            />
-          })}
-        </Group>
         <Group>
           {lines.map((line: any, i: number) => {
             return <Line
@@ -181,6 +116,78 @@ const ParallelCoordinatesKanva = (props: any) => {
               onMouseOver={handleMouseOver}
               onMouseLeave={handleMouseLeave}
             />
+          })}
+        </Group>
+      </Layer>
+      <Layer>
+        <Group>
+          {axis.map((line: any, index: number) => {
+            return <Group>
+              <Line
+                key={`axis-${index}`}
+                points={line.points}
+                stroke={"black"}
+                strokeWidth={1}
+              />
+              <Text 
+                key={`axis-title-${index}`}
+                x={line.points[0] - 30}
+                y={10}
+                text={line.text}
+                fontSize={16}
+              />
+              <RegularPolygon
+                x={line.points[0]}
+                y={y}
+                key={"filter-upper"}
+                sides={3}
+                radius={10}
+                fill={"black"}
+                opacity={1}
+                offsetY={-10}
+                rotation={180}
+                draggable
+                dragBoundFunc={(pos) => {
+                  let yTemp = pos.y;
+                  if (yTemp < y) yTemp = y;
+                  else if (yTemp > axis[index].limitLower) yTemp = axis[index].limitLower;
+
+                  const updatedAxis = [...axis];
+                  updatedAxis[index].limitUpper = yTemp;
+                  setAxis(updatedAxis);
+
+                  return {
+                    x: line.points[0],
+                    y: yTemp
+                  }
+                }}
+              />
+              <RegularPolygon
+                x={line.points[0]}
+                y={y+height}
+                key={"filter-lower"}
+                sides={3}
+                radius={10}
+                fill={"black"}
+                opacity={1}
+                offsetY={-10}
+                draggable
+                dragBoundFunc={(pos) => {
+                  let yTemp = pos.y;
+                  if (yTemp < axis[index].limitUpper) yTemp = axis[index].limitUpper;
+                  else if (yTemp > height + y) yTemp = height + y;
+
+                  const updatedAxis = [...axis];
+                  updatedAxis[index].limitLower = yTemp;
+                  setAxis(updatedAxis);
+
+                  return {
+                    x: line.points[0],
+                    y: yTemp
+                  }
+                }}
+              />
+            </Group>
           })}
         </Group>
       </Layer>
