@@ -10,7 +10,8 @@ const ParallelCoordinatesKanva = (props: any) => {
 
   const [axis, setAxis] = useState([]) as any[]; // Axis lines
   const [axisScales, setAxisScales] = useState([]) as any[]; // Axis scales
-  const [lines, setLines] = useState([]) as any[]; // Data lines
+  const [linesAll, setLinesAll] = useState([]) as any[]; // Data lines
+  const [linesFiltered, setLinesFiltered] = useState([]) as any[]; // Data lines
 
   useEffect(() => {
     // Set the number of axes
@@ -47,7 +48,8 @@ const ParallelCoordinatesKanva = (props: any) => {
         opacity: 0.3,
       })
     })
-    setLines(linesTemp);
+    setLinesAll(linesTemp);
+    setLinesFiltered(linesTemp);
   }, [])
 
   function getPercentage(value: number, min: number, max: number): number {
@@ -81,24 +83,34 @@ const ParallelCoordinatesKanva = (props: any) => {
 
   function handleMouseOver(e: KonvaEventObject<MouseEvent>) {
     const index: number = e.target.index;
-    const updatedLines = [...lines];
+    const updatedLines = [...linesFiltered];
     updatedLines[index].color = 'red';
     updatedLines[index].width = 5;
     updatedLines[index].opacity = 1;
-    setLines(updatedLines);
+    setLinesFiltered(updatedLines);
   }
 
   function handleMouseLeave(e: KonvaEventObject<MouseEvent>) {
     const index: number = e.target.index;
-    const updatedLines = [...lines];
+    const updatedLines = [...linesFiltered];
     updatedLines[index].color = 'blue';
     updatedLines[index].width = 2;
     updatedLines[index].opacity = 0.3;
-    setLines(updatedLines);
+    setLinesFiltered(updatedLines);
   }
 
-  function filterLines() {
-    
+  function filterLines(axisIndex: number) {
+    const filteredLines = [...linesAll].filter(line => {
+      let valid: boolean = true;
+      for (let i = 0; i < axis.length; i++) {
+        if (line.points[i*2+1] > axis[i].limitLower
+          || line.points[i*2+1] < axis[i].limitUpper)
+          valid = false;
+        }
+        return valid;
+      }
+      );
+    setLinesFiltered(filteredLines);
   }
 
   return <>
@@ -106,7 +118,20 @@ const ParallelCoordinatesKanva = (props: any) => {
     <Stage width={width} height={height+100}>
       <Layer>
         <Group>
-          {lines.map((line: any, i: number) => {
+          {linesAll.map((line: any, i: number) => {
+            return <Line
+              key={line.key}
+              points={line.points}
+              stroke={"#DCDCDC"}
+              strokeWidth={1}
+              opacity={1}
+            />
+          })}
+        </Group>
+      </Layer>
+      <Layer>
+        <Group>
+          {linesFiltered.map((line: any, i: number) => {
             return <Line
               key={line.key}
               points={line.points}
@@ -156,6 +181,8 @@ const ParallelCoordinatesKanva = (props: any) => {
                   updatedAxis[index].limitUpper = yTemp;
                   setAxis(updatedAxis);
 
+                  filterLines(index);
+
                   return {
                     x: line.points[0],
                     y: yTemp
@@ -180,6 +207,8 @@ const ParallelCoordinatesKanva = (props: any) => {
                   const updatedAxis = [...axis];
                   updatedAxis[index].limitLower = yTemp;
                   setAxis(updatedAxis);
+
+                  filterLines(index);
 
                   return {
                     x: line.points[0],
