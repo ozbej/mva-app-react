@@ -20,6 +20,9 @@ function Home() {
  let db: Dexie = new Dexie("dataset");
 
  useEffect(() => {
+  let rowsTemp: any[] = [];
+  let headersTemp: any[] = [];
+
   Dexie.exists("dataset")
   .then((exists: boolean) => {
     if (!exists) {
@@ -33,11 +36,18 @@ function Home() {
   .then(() => db.open())
   .then((data: any) => {
     console.log("DB opened");
-    db.table('rows').toArray().then(data => setRows(data.map(obj => {
-      delete obj.id;
-      return Object.values(obj)
-    })));
-    db.table('headerRow').toArray().then(data => setHeader(data));
+    db.table('rows').toArray().then(data => {
+      rowsTemp = data.map(obj => {
+        delete obj.id;
+        return Object.values(obj)
+      });
+      setRows(rowsTemp);
+    });
+    db.table('headerRow').toArray().then(data => {
+      headersTemp = data;
+      setHeader(headersTemp);
+      filterData(headersTemp, rowsTemp);
+    });
   })
   .catch(err => console.log(err.message));
  }, [])
@@ -59,51 +69,47 @@ function Home() {
     headerRow: "++id, title, type"
   });
 
-  db.open().then(data => console.log("DB re-opened"));
-  
-  // Insert headerRow and rows to db
-  db.table('headerRow').bulkAdd(headerRow);
-  db.table('rows').bulkAdd(rows);
+  db.open()
+  .then(() => {
+    console.log("DB re-opened")
 
-  // Set headeRow and rows
-  db.table('headerRow').toArray().then(data => {
-  setHeader(data)
-  });
-  db.table('rows').toArray().then(data => {
-    setRows(data.map(obj => {
-      delete obj.id;
-      return Object.values(obj)
-    }))
+    // Insert headerRow and rows to db
+    db.table('headerRow').bulkAdd(headerRow);
+    db.table('rows').bulkAdd(rows)
+
+    setHeader(headerRow);
+    const rowsTemp: any[] = rows.map(obj => Object.values(obj));
+    setRows(rowsTemp)
+    filterData(headerRow, rowsTemp);
   });
  }
 
  // Function that filters data
- useEffect(() => {
-  if (header && rows && header.length > 0 && rows.length > 0) {
-    let dataTemp: any[] = [];
-    let currRow: number[] = [];
-    let dataHeadersTemp: string[] = [];
+ function filterData(header: any[], rows: any[]) {
+  let dataTemp: any[] = [];
+  let currRow: number[] = [];
+  let dataHeadersTemp: string[] = [];
 
-    header.forEach((item: any, i: number) => {
-      if (item.type === "number") dataHeadersTemp.push(item.title);
+  header.forEach((item: any, i: number) => {
+    if (item.type === "number") dataHeadersTemp.push(item.title);
+  })
+  setDataHeaders(dataHeadersTemp);
+
+  rows.forEach((row: any, i: number) => {
+    currRow = [];
+    row.forEach((value: any, j: number) => {
+      if (header[j].type === "number") currRow.push(Number(value));
     })
-    setDataHeaders(dataHeadersTemp);
+    dataTemp.push(currRow);
+  });
 
-    rows.forEach((row: any, i: number) => {
-      currRow = [];
-      row.forEach((value: any, j: number) => {
-        if (header[j].type === "number") currRow.push(Number(value));
-      })
-      dataTemp.push(currRow);
-    });
-    setData(dataTemp);
-  }
- }, [header, rows])
+  setData(dataTemp);
+ }
 
   return (
     <div className="App">
       <h1>MVA App</h1>
-      <FileUploader setHeader={setHeader} setRows={setRows} datasetUploaded={datasetUploaded} />
+      <FileUploader datasetUploaded={datasetUploaded} />
       <TableView header={header} rows={rows}/>
       {data && data.length !== 0 ? <ParallelCoordinatesKanva data={data} dataHeaders={dataHeaders} /> : <></>}
     </div>

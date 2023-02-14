@@ -14,6 +14,8 @@ const ParallelCoordinatesKanva = (props: any) => {
   const [linesFiltered, setLinesFiltered] = useState([]) as any[]; // Data lines
 
   useEffect(() => {
+    console.log("useEffect");
+
     // Set the number of axes
     const numAxis = props.data[0].length;
 
@@ -50,7 +52,7 @@ const ParallelCoordinatesKanva = (props: any) => {
     })
     setLinesAll(linesTemp);
     setLinesFiltered(linesTemp);
-  }, [])
+  }, [props])
 
   function getPercentage(value: number, min: number, max: number): number {
     return (value - min) / (max - min);

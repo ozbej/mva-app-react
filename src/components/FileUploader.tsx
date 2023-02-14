@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 
 interface FileUploaderProps {
-  setHeader: (data: any[]) => void;
-  setRows: (data: any[]) => void;
   datasetUploaded: (headerRow: any[], rows: any[]) => void;
 }
  
-function FileUploader({ setHeader, setRows, datasetUploaded }: FileUploaderProps) {
+function FileUploader({ datasetUploaded }: FileUploaderProps) {
   const [file, setFile] = useState();
   const fileReader = new FileReader();
 
