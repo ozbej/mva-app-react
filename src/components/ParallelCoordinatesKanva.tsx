@@ -14,8 +14,6 @@ const ParallelCoordinatesKanva = (props: any) => {
   const [linesFiltered, setLinesFiltered] = useState([]) as any[]; // Data lines
 
   useEffect(() => {
-    console.log("useEffect");
-
     // Set the number of axes
     const numAxis = props.data[0].length;
 
@@ -78,8 +76,6 @@ const ParallelCoordinatesKanva = (props: any) => {
         max: Math.max(...filtered)
       });
     }
-
-    console.log(result);
     return result;
   }
 

@@ -1,0 +1,541 @@
+PLAYER,TEAM,GP,GS,MIN,G,ASST,SHOTS,SOG
+Jamie Vardy,Leicester City,35,34,3034,23,5,71,43
+Danny Ings,Southampton,38,32,2812,22,2,66,38
+Pierre-Emerick Aubameyang,Arsenal,36,35,3138,22,3,70,42
+Raheem Shaquille Sterling,Manchester City,33,30,2660,20,1,68,38
+Mohamed Salah Ghaly,Liverpool,34,33,2884,19,10,95,59
+Sadio Mané,Liverpool,35,31,2753,18,7,66,36
+Harry Kane,Tottenham Hotspur,29,29,2589,18,2,62,37
+Raúl Alonso Jiménez Rodríguez,Wolverhampton Wanderers,38,37,3244,17,6,89,44
+Marcus Rashford,Manchester United,31,31,2653,17,7,77,44
+Anthony Martial,Manchester United,32,31,2638,17,6,59,40
+Sergio Leonel Agüero del Castillo,Manchester City,24,18,1456,16,3,54,28
+Tammy Bakumo-Abraham,Chelsea,34,25,2221,15,3,74,40
+Gabriel Fernando de Jesus,Manchester City,34,21,2027,14,7,81,48
+Chris Wood,Burnley,32,29,2444,14,1,57,31
+Kevin De Bruyne,Manchester City,35,32,2798,13,20,70,31
+Dominic Calvert-Lewin,Everton,36,30,2629,13,1,70,38
+Richarlison de Andrade,Everton,36,36,3081,13,3,66,32
+Teemu Pukki,Norwich City,36,33,2892,11,3,56,35
+Riyad Mahrez,Manchester City,33,21,1940,11,9,51,32
+Heung-Min Son,Tottenham Hotspur,30,28,2485,11,10,62,38
+Michail Antonio,West Ham United,24,19,1770,10,3,54,31
+Neal Maupay,Brighton and Hove Albion,37,30,2768,10,3,65,38
+Alexandre Lacazette,Arsenal,30,22,1877,10,4,44,26
+Mason Greenwood,Manchester United,31,12,1312,10,1,32,20
+Troy Deeney,Watford,27,26,2234,10,2,32,23
+Roberto Firmino Barbosa de Oliveira,Liverpool,38,34,3001,9,8,70,39
+Jordan Ayew,Crystal Palace,37,37,3160,9,2,44,24
+Christian Pulisic,Chelsea,25,19,1726,9,4,48,26
+Willian Borges Da Silva,Chelsea,36,29,2601,9,7,48,29
+Callum Wilson,Bournemouth,35,32,2909,8,1,45,21
+Jack Grealish,Aston Villa,36,36,3234,8,6,55,23
+Ayoze Pérez,Leicester City,33,26,2019,8,4,36,22
+Olivier Giroud,Chelsea,18,12,999,8,0,35,19
+Jay Rodriguez,Burnley,36,20,2009,8,1,55,30
+Bamidele Alli,Tottenham Hotspur,25,21,1851,8,4,35,19
+Bruno Miguel Borges Fernandes,Manchester United,14,14,1192,8,7,37,18
+Sébastien Haller,West Ham United,32,24,2263,7,1,46,27
+Harry Wilson,Bournemouth,31,20,1651,7,0,31,20
+Diogo José Teixeira da Silva,Wolverhampton Wanderers,34,27,2297,7,1,46,26
+Mason Mount,Chelsea,37,32,2872,7,5,50,29
+Todd Cantwell,Norwich City,37,30,2500,6,2,29,16
+David Silva,Manchester City,27,22,1832,6,10,32,18
+Bernardo Mota Veiga de Carvalho e Silva,Manchester City,34,23,2029,6,7,29,15
+Ashley Barnes,Burnley,19,17,1361,6,0,32,12
+Oliver McBurnie,Sheffield United,36,24,2116,6,0,43,25
+Joshua King,Bournemouth,26,24,2019,6,4,22,13
+Mahmoud Ahmed Ibrahim Hassan,Aston Villa,34,20,1950,6,1,28,17
+Harvey Barnes,Leicester City,36,24,2090,6,8,46,28
+James Maddison,Leicester City,31,29,2628,6,3,44,18
+Jonjo Shelvey,Newcastle United,26,25,2123,6,2,30,14
+Lys Mousset,Sheffield United,30,11,1232,6,4,23,9
+Virgil van Dijk,Liverpool,38,38,3420,5,1,27,16
+Phil Foden,Manchester City,23,9,892,5,2,26,15
+Robert Snodgrass,West Ham United,24,17,1511,5,5,16,10
+John Fleck,Sheffield United,30,28,2517,5,2,19,11
+Leandro Trossard,Brighton and Hove Albion,31,22,2013,5,3,33,12
+John Lundstram,Sheffield United,34,26,2455,5,3,33,10
+James Ward-Prowse,Southampton,38,38,3420,5,3,43,26
+Wesley Moraes Ferreira da Silva,Aston Villa,21,21,1790,5,1,28,18
+Nicolas Pépé,Arsenal,31,22,2015,5,6,37,18
+Kelechi Iheanacho,Leicester City,20,12,961,5,3,29,20
+Stuart Armstrong,Southampton,30,19,1713,5,3,35,20
+Andrii Yarmolenko,West Ham United,23,10,988,5,1,22,13
+Ismaïla Sarr,Watford,28,22,2028,5,4,30,13
+Divock Okoth Origi,Liverpool,28,7,706,4,1,10,6
+Trent Alexander-Arnold,Liverpool,38,35,3176,4,13,27,13
+Jordan Henderson,Liverpool,30,26,2244,4,5,12,8
+Alex Oxlade-Chamberlain,Liverpool,30,17,1492,4,1,22,10
+Georginio Wijnaldum,Liverpool,37,35,2948,4,0,31,15
+Che Adams,Southampton,30,12,1105,4,2,22,10
+Nathan Redmond,Southampton,32,32,2768,4,4,45,21
+Wilfried Zaha,Crystal Palace,38,37,3280,4,3,39,17
+Lucas Rodrigues Moura da Silva,Tottenham Hotspur,35,25,2247,4,4,35,14
+Anwar El Ghazi,Aston Villa,34,26,2061,4,4,41,20
+Miguel Ángel Almirón Rejala,Newcastle United,36,35,3033,4,2,37,17
+Leander Dendoncker,Wolverhampton Wanderers,38,32,2794,4,0,15,5
+Matt Doherty,Wolverhampton Wanderers,36,32,2840,4,3,26,16
+Adama Traoré,Wolverhampton Wanderers,37,27,2606,4,9,28,12
+Jorge Luiz Frello Filho,Chelsea,31,27,2384,4,2,8,4
+Marcos Alonso,Chelsea,18,15,1432,4,2,19,8
+Scott McTominay,Manchester United,27,20,1770,4,1,17,10
+Gerard Deulofeu,Watford,28,25,2105,4,5,43,21
+Abdoulaye Doucouré,Watford,37,36,3167,4,2,41,12
+Mark Noble,West Ham United,33,32,2684,4,3,14,6
+Dwight Gayle,Newcastle United,20,10,849,4,2,18,10
+Rodrigo Hernández Cascante,Manchester City,35,29,2486,3,2,20,9
+Aaron Cresswell,West Ham United,31,31,2730,3,0,14,5
+Issa Diop,West Ham United,32,31,2766,3,1,14,7
+Bernard Anício Caldeira Duarte,Everton,27,15,1278,3,2,7,5
+Luka Milivojević,Crystal Palace,31,28,2514,3,1,21,9
+Lewis Dunk,Brighton and Hove Albion,36,36,3231,3,3,26,10
+Billy Sharp,Sheffield United,25,10,1047,3,2,13,7
+Adam Webster,Brighton and Hove Albion,31,31,2670,3,1,13,7
+Dominic Solanke,Bournemouth,32,17,1644,3,1,18,8
+Michael Obafemi,Southampton,21,8,661,3,2,7,5
+Patrick van Aanholt,Crystal Palace,29,29,2511,3,2,18,6
+John McGinn,Aston Villa,28,27,2316,3,3,43,20
+Conor Hourihane,Aston Villa,27,18,1538,3,5,16,10
+Douglas Luiz Soares de Paulo,Aston Villa,36,28,2608,3,2,22,12
+Gabriel Teodoro Martinelli Silva,Arsenal,14,6,655,3,0,10,5
+Ricardo Domingos Barbosa Pereira,Leicester City,28,28,2520,3,2,15,5
+Ben Chilwell,Leicester City,27,27,2375,3,3,13,6
+Pedro Lomba Neto,Wolverhampton Wanderers,29,9,928,3,3,12,6
+Youri Tielemans,Leicester City,37,32,2834,3,6,35,13
+Allan Saint-Maximin,Newcastle United,26,23,1870,3,4,32,21
+Daniel James,Manchester United,33,26,2290,3,6,32,20
+N'Golo Kanté,Chelsea,22,20,1733,3,0,12,6
+Roberto Maximiliano Pereyra,Watford,28,17,1653,3,0,13,9
+Jeffrey Schlupp,Crystal Palace,17,11,1034,3,1,12,10
+Aaron Anthony Connolly,Brighton and Hove Albion,24,14,1261,3,1,25,14
+Dan Gosling,Bournemouth,24,14,1260,3,1,9,6
+Junior Stanislas,Bournemouth,15,7,712,3,0,11,7
+Tomáš Souček,West Ham United,13,12,1041,3,0,16,8
+Steven Bergwijn,Tottenham Hotspur,14,8,702,3,1,6,4
+Naby Deco Keïta,Liverpool,18,9,814,2,3,10,7
+James Milner,Liverpool,22,9,926,2,2,10,4
+Andrew Robertson,Liverpool,36,34,3113,2,12,15,6
+Fábio Henrique Tavares,Liverpool,28,22,2074,2,3,8,4
+İlkay Gündoğan,Manchester City,31,21,2017,2,1,19,8
+Nicolás Hernán Otamendi,Manchester City,24,18,1711,2,0,12,7
+Pablo Fornals,West Ham United,36,24,2177,2,5,27,11
+Angelo Ogbonna,West Ham United,31,31,2787,2,0,12,4
+Moise Kean,Everton,29,6,835,2,2,25,13
+Michael Keane,Everton,31,28,2556,2,0,13,4
+Yerry Fernando Mina González,Everton,29,25,2281,2,1,23,11
+Gylfi Sigurdsson,Everton,35,28,2563,2,3,26,14
+Cenk Tosun,Everton,10,4,466,2,0,12,5
+Theo Walcott,Everton,25,17,1297,2,3,19,10
+Pascal Groß,Brighton and Hove Albion,29,22,1802,2,4,20,9
+George Baldock,Sheffield United,38,38,3420,2,3,10,5
+John Egan,Sheffield United,36,36,3189,2,0,13,5
+David McGoldrick,Sheffield United,28,22,1822,2,2,38,20
+Enda Stevens,Sheffield United,38,38,3346,2,4,15,4
+Nathan Aké,Bournemouth,29,29,2505,2,2,19,7
+Moussa Djenepo,Southampton,18,10,926,2,2,17,8
+Christian Benteke Liolo,Crystal Palace,24,13,1257,2,1,34,19
+Tyrone Mings,Aston Villa,33,33,2903,2,2,9,4
+Tanguy Ndombèlé Alvaro,Tottenham Hotspur,21,12,1007,2,2,6,4
+Erik Lamela,Tottenham Hotspur,25,12,1211,2,1,19,10
+Moussa Sissoko,Tottenham Hotspur,29,28,2455,2,1,12,4
+Toby Alderweireld,Tottenham Hotspur,33,33,2958,2,2,13,4
+Jonathan Castro Otto,Wolverhampton Wanderers,35,33,2890,2,2,11,5
+Rúben Diogo da Silva Neves,Wolverhampton Wanderers,38,35,3059,2,2,38,10
+David Luiz Moreira Marinho,Arsenal,33,32,2811,2,1,19,8
+Sokratis Papastathopoulos,Arsenal,19,19,1697,2,0,5,2
+Onyinye Wilfred Ndidi,Leicester City,32,29,2674,2,1,19,3
+Romain Saïss,Wolverhampton Wanderers,33,31,2706,2,1,19,8
+Joelinton Cássio Apolinário de Lira,Newcastle United,38,32,2699,2,2,38,15
+Ciaran Clark,Newcastle United,14,14,1188,2,0,5,4
+Federico Fernández,Newcastle United,32,29,2618,2,2,13,7
+Matt Ritchie,Newcastle United,18,14,1315,2,1,17,8
+Fabian Schär,Newcastle United,22,18,1633,2,0,15,6
+César Azpilicueta,Chelsea,36,36,3230,2,6,20,6
+Dwight McNeil,Burnley,38,38,3344,2,6,32,14
+James Tarkowski,Burnley,38,38,3420,2,2,15,5
+Ashley Westwood,Burnley,35,35,3150,2,6,8,3
+Craig Dawson,Watford,29,26,2359,2,0,18,7
+Andre Gray,Watford,23,7,746,2,0,16,7
+Danny Welbeck,Watford,18,8,815,2,0,18,9
+Demarai Gray,Leicester City,21,3,607,2,3,16,8
+Matej Vydra,Burnley,19,7,812,2,1,17,10
+Shane Long,Southampton,26,15,1399,2,2,28,14
+Alireza Jahanbakhsh,Brighton and Hove Albion,10,3,308,2,0,8,2
+Matthew Longstaff,Newcastle United,9,6,572,2,0,3,2
+Antonio Rüdiger,Chelsea,20,19,1710,2,0,9,3
+Florian Lejeune,Newcastle United,6,4,441,2,0,4,3
+Eddie Nketiah,Arsenal,13,7,633,2,0,13,5
+Emiliano Buendía,Norwich City,36,28,2462,1,7,27,11
+Josip Drmic,Norwich City,21,5,637,1,0,11,6
+Onel Hernández,Norwich City,26,14,1381,1,2,17,8
+Jamal Lewis,Norwich City,28,25,2303,1,0,7,4
+Kenny McLean,Norwich City,37,32,2964,1,1,23,10
+Mario Vrancic,Norwich City,20,6,628,1,0,9,3
+Joel Matip,Liverpool,9,8,704,1,0,4,1
+Xherdan Shaqiri,Liverpool,7,2,182,1,0,2,1
+Kyle Walker,Manchester City,29,28,2395,1,4,9,3
+Fabián Cornelio Balbuena González,West Ham United,17,13,1176,1,0,8,4
+Felipe Anderson Pereira Gomes,West Ham United,25,20,1505,1,4,15,8
+Aymeric Laporte,Manchester City,15,14,1104,1,0,3,2
+Declan Rice,West Ham United,38,38,3420,1,3,23,9
+Davy Pröpper,Brighton and Hove Albion,35,32,2829,1,2,19,8
+Jóhann Gudmundsson,Burnley,12,6,622,1,1,8,2
+Chris Mepham,Bournemouth,12,10,911,1,0,6,2
+Tom Davies,Everton,30,23,2026,1,0,11,5
+Shane Duffy,Brighton and Hove Albion,19,12,1232,1,0,6,1
+Glenn Murray,Brighton and Hove Albion,23,7,790,1,1,15,5
+Oliver Norwood,Sheffield United,38,37,3100,1,1,12,6
+Philip Billing,Bournemouth,34,29,2532,1,1,26,8
+Steve Cook,Bournemouth,29,28,2430,1,0,7,2
+Jefferson Andrés Lerma Solís,Bournemouth,33,31,2709,1,2,21,2
+Cédric Ricardo Alves Soares,Arsenal,21,19,1559,1,1,7,5
+Jan Bednarek,Southampton,34,34,3058,1,1,6,1
+Ryan Bertrand,Southampton,32,31,2744,1,1,14,3
+Jack Stephens,Southampton,28,27,2453,1,3,6,2
+Jannik Vestergaard,Southampton,19,17,1497,1,0,10,5
+Cheikhou Kouyaté,Crystal Palace,35,29,2535,1,1,20,4
+Andros Townsend,Crystal Palace,24,14,1289,1,1,8,5
+Ahmed Eissa El Mohamady Abdel Fattah,Aston Villa,18,11,1026,1,1,4,1
+Björn Engels,Aston Villa,17,15,1447,1,0,8,1
+Ezri Konsa Ngoyo,Aston Villa,25,24,2042,1,2,8,4
+Matt Targett,Aston Villa,28,27,2295,1,2,6,4
+Serge Aurier,Tottenham Hotspur,33,31,2705,1,5,7,4
+Reiss Nelson,Arsenal,17,7,627,1,0,6,4
+Granit Xhaka,Arsenal,31,30,2591,1,2,8,3
+Calum Chambers,Arsenal,14,13,1103,1,1,8,2
+Lucas Torreira,Arsenal,29,17,1508,1,1,17,6
+Joseph Willock,Arsenal,29,8,844,1,1,12,5
+Hamza Choudhury,Leicester City,20,10,889,1,1,4,2
+Jonny Evans,Leicester City,38,38,3385,1,1,22,8
+Dennis Praet,Leicester City,27,12,1132,1,2,8,3
+João Filipe Iria Santos Moutinho,Wolverhampton Wanderers,38,34,3107,1,6,17,6
+Çağlar Söyüncü,Leicester City,34,34,3037,1,1,17,5
+Isaac Hayden,Newcastle United,29,26,2226,1,2,10,3
+Jamaal Lascelles,Newcastle United,24,24,2079,1,0,7,2
+Sean Longstaff,Newcastle United,23,14,1373,1,1,18,7
+Jesse Lingard,Manchester United,22,9,932,1,0,12,6
+Andreas Hugo Hoelgebaum Pereira,Manchester United,25,18,1488,1,3,28,14
+Paul Pogba,Manchester United,16,13,1205,1,3,17,8
+Victor Lindelöf,Manchester United,35,35,3093,1,0,5,1
+Ross Barkley,Chelsea,21,13,1104,1,4,24,12
+Mateo Kovačić,Chelsea,31,23,2073,1,3,12,5
+Pedro Rodríguez Ledesma,Chelsea,11,8,662,1,1,14,10
+Fikayo Tomori,Chelsea,15,15,1293,1,0,6,3
+Harry Maguire,Manchester United,38,38,3420,1,1,25,8
+Ben Mee,Burnley,32,32,2880,1,1,13,7
+Tom Cleverley,Watford,18,11,966,1,0,10,5
+Will Hughes,Watford,30,27,2262,1,1,17,3
+Alex Iwobi,Everton,25,19,1601,1,0,18,10
+Adam Lallana,Liverpool,15,3,374,1,1,3,1
+Alexander Tettey,Norwich City,30,28,2350,1,1,13,4
+Jan Vertonghen,Tottenham Hotspur,23,19,1646,1,1,3,2
+Michy Batshuayi Tunga,Chelsea,16,1,226,1,1,11,2
+Adam Masina,Watford,26,20,1818,1,0,12,3
+Mesut Özil,Arsenal,18,18,1448,1,2,5,3
+James Tomkins,Crystal Palace,18,18,1584,1,1,9,3
+Yves Bissouma,Brighton and Hove Albion,22,15,1260,1,0,14,7
+Robbie Brady,Burnley,17,5,450,1,2,7,1
+Bukayo Saka,Arsenal,26,19,1753,1,5,9,4
+Callum Hudson-Odoi,Chelsea,22,7,850,1,5,10,4
+DeAndre Yedlin,Newcastle United,16,10,936,1,0,1,1
+Brandon Williams,Manchester United,17,11,1004,1,0,5,2
+Kieran Tierney,Arsenal,15,12,992,1,1,5,2
+Héctor Bellerín,Arsenal,15,13,1159,1,0,5,2
+Kortney Hause,Aston Villa,18,17,1544,1,0,18,3
+Curtis Jones,Liverpool,6,1,122,1,0,5,2
+Valentino Lazaro,Newcastle United,13,4,473,1,0,3,1
+Sander Berge,Sheffield United,14,12,949,1,1,4,2
+Mbwana Ally Samatta,Aston Villa,14,11,946,1,0,12,3
+Daniel Castelo Podence,Wolverhampton Wanderers,9,3,287,1,0,6,3
+Jarrod Bowen,West Ham United,13,11,919,1,4,14,7
+David Brooks,Bournemouth,9,8,511,1,0,3,2
+Moritz Leitner,Norwich City,9,7,684,0,0,6,0
+Max Aarons,Norwich City,36,36,3240,0,1,8,4
+Sam Byram,Norwich City,17,15,1294,0,0,10,2
+Ralf Fährmann,Norwich City,1,1,22,0,0,0,0
+Ben Godfrey,Norwich City,30,30,2646,0,0,15,6
+Grant Hanley,Norwich City,15,14,1262,0,0,7,2
+Tim Krul,Norwich City,36,36,3240,0,0,0,0
+Marco Stiepermann,Norwich City,24,14,1187,0,0,12,6
+Tom Trybull,Norwich City,16,14,1136,0,0,8,2
+Joseph Gomez,Liverpool,28,22,1999,0,0,0,0
+Alisson Ramses Becker,Liverpool,29,29,2545,0,1,0,0
+Adrián San Miguel del Castillo,Liverpool,11,9,873,0,0,0,0
+Claudio Andrés Bravo Muñoz,Manchester City,4,3,346,0,0,0,0
+João Pedro Cavaco Cancelo,Manchester City,17,13,1205,0,0,12,3
+Lukasz Fabianski,West Ham United,25,25,2119,0,0,0,0
+Ederson Santana de Moraes,Manchester City,35,35,3072,0,0,0,0
+John Stones,Manchester City,16,12,1119,0,0,5,1
+Ryan Fredericks,West Ham United,27,25,2237,0,3,1,0
+Oleksandr Zinchenko,Manchester City,19,13,1273,0,0,9,3
+Manuel Lanzini,West Ham United,24,14,1377,0,2,15,7
+Jack Wilshere,West Ham United,8,2,210,0,0,0,0
+Max Meyer,Crystal Palace,17,6,650,0,0,7,2
+Adam Smith,Bournemouth,24,24,2060,0,1,3,1
+Erik Pieters,Burnley,24,21,1877,0,4,13,3
+Séamus Coleman,Everton,27,21,1839,0,1,6,4
+Lucas Digne,Everton,35,35,3035,0,7,14,4
+Jean-Philippe Gbamin,Everton,2,1,135,0,0,0,0
+Mason Holgate,Everton,27,24,2054,0,3,10,5
+Jordan Pickford,Everton,38,38,3420,0,0,0,0
+André Filipe Tavares Gomes,Everton,19,17,1460,0,1,5,0
+Dan Burn,Brighton and Hove Albion,34,33,2881,0,0,9,0
+David Button,Brighton and Hove Albion,0,0,0,0,0,0,0
+Bernardo Fernandes da Silva Junior,Brighton and Hove Albion,14,7,678,0,0,4,2
+Solly March,Brighton and Hove Albion,19,11,1144,0,1,15,8
+Martín Montoya,Brighton and Hove Albion,27,23,1900,0,1,6,3
+Mathew Ryan,Brighton and Hove Albion,38,38,3420,0,0,0,0
+Dale Stephens,Brighton and Hove Albion,33,28,2528,0,1,13,2
+Chris Basham,Sheffield United,38,38,3255,0,1,6,0
+Luke Freeman,Sheffield United,11,3,362,0,0,1,0
+Dean Henderson,Sheffield United,36,36,3240,0,0,0,0
+Phil Jagielka,Sheffield United,6,2,240,0,0,0,0
+Simon Moore,Sheffield United,2,2,180,0,0,0,0
+Jack O'Connell,Sheffield United,33,32,2915,0,1,11,3
+Ben Osborn,Sheffield United,13,6,591,0,0,2,1
+Artur Boruc,Bournemouth,0,0,0,0,0,0,0
+Charlie Daniels,Bournemouth,2,2,127,0,0,0,0
+Aaron Ramsdale,Bournemouth,37,37,3330,0,1,0,0
+Diego Rico,Bournemouth,27,27,2334,0,4,7,3
+Jack Simpson,Bournemouth,4,1,238,0,0,0,0
+Andrew Surman,Bournemouth,5,2,235,0,0,0,0
+Sofiane Boufal,Southampton,20,8,760,0,2,12,7
+Angus Gunn,Southampton,10,10,900,0,0,0,0
+Pierre-Emile Højbjerg,Southampton,33,30,2750,0,1,36,11
+Alex McCarthy,Southampton,28,28,2520,0,0,0,0
+Oriol Romeu,Southampton,30,20,1858,0,0,3,0
+Yan Valery,Southampton,11,10,782,0,0,2,2
+Gary Cahill,Crystal Palace,25,25,2168,0,1,13,5
+Scott Dann,Crystal Palace,16,14,1265,0,1,6,2
+Vicente Guaita,Crystal Palace,35,35,3150,0,0,0,0
+Wayne Hennessey,Crystal Palace,3,3,270,0,0,0,0
+Martin Kelly,Crystal Palace,19,17,1550,0,1,2,0
+James McArthur,Crystal Palace,37,37,3104,0,3,20,6
+James McCarthy,Crystal Palace,33,16,1672,0,0,9,3
+Joel Ward,Crystal Palace,29,27,2383,0,0,4,1
+Tom Heaton,Aston Villa,20,20,1795,0,0,0,0
+Henri Lansbury,Aston Villa,10,2,191,0,0,2,0
+José Ignacio Peleteiro Ramallo,Aston Villa,10,4,332,0,1,2,1
+Jed Steer,Aston Villa,1,1,8,0,0,0,0
+Neil Taylor,Aston Villa,14,11,1089,0,0,2,0
+Eric Dier,Tottenham Hotspur,19,15,1341,0,2,8,1
+Paulo Gazzaniga,Tottenham Hotspur,18,17,1612,0,0,0,0
+Hugo Lloris,Tottenham Hotspur,21,21,1808,0,0,0,0
+Danny Rose,Newcastle United,23,20,1759,0,0,1,0
+Oliver Skipp,Tottenham Hotspur,7,1,75,0,0,0,0
+Davinson Sánchez Mina,Tottenham Hotspur,29,27,2431,0,0,7,3
+Kyle Walker-Peters,Southampton,13,10,946,0,0,1,0
+Harry Winks,Tottenham Hotspur,31,26,2228,0,0,10,2
+Willy Boly,Wolverhampton Wanderers,22,22,1979,0,1,3,3
+Ainsley Maitland-Niles,Arsenal,20,15,1383,0,2,3,1
+Dani Ceballos,Arsenal,24,18,1699,0,2,8,3
+Mattéo Guendouzi Olié,Arsenal,24,19,1748,0,1,6,5
+Bernd Leno,Arsenal,30,30,2650,0,0,0,0
+Emiliano Martínez,Arsenal,9,8,770,0,0,0,0
+Marc Albrighton,Leicester City,20,9,864,0,3,7,2
+Ryan Bennett,Leicester City,16,10,936,0,0,1,0
+Conor Coady,Wolverhampton Wanderers,38,38,3420,0,0,0,0
+James Justin,Leicester City,13,11,1010,0,1,6,0
+Morgan Gibbs-White,Wolverhampton Wanderers,7,1,126,0,0,2,0
+Wes Morgan,Leicester City,11,4,430,0,0,3,2
+John Ruddy,Wolverhampton Wanderers,0,0,0,0,0,0,0
+Kasper Schmeichel,Leicester City,38,38,3420,0,0,1,0
+Rúben Gonçalo Silva Nascimento Vinagre,Wolverhampton Wanderers,16,6,646,0,0,4,0
+Danny Ward,Leicester City,0,0,0,0,0,0,0
+Rui Pedro dos Santos Patrício,Wolverhampton Wanderers,38,38,3420,0,0,0,0
+Karl Darlow,Newcastle United,0,0,0,0,0,0,0
+Martin Dúbravka,Newcastle United,38,38,3420,0,0,0,0
+Paul Dummett,Newcastle United,16,14,1228,0,0,2,2
+Emil Krafth,Newcastle United,17,11,1019,0,1,3,0
+Javier Manquillo,Newcastle United,21,18,1599,0,1,0,0
+Yoshinori Muto,Newcastle United,8,2,207,0,0,1,0
+Kurt Happy Zouma,Chelsea,28,25,2343,0,0,14,5
+Kepa Arrizabalaga Revuelta,Chelsea,33,33,2970,0,0,0,0
+Willy Caballero,Chelsea,5,5,450,0,0,0,0
+Andreas Christensen,Chelsea,21,21,1752,0,0,6,2
+Robert Kenedy Nunes do Nascimento,Chelsea,0,0,0,0,0,0,0
+Emerson Palmieri dos Santos,Chelsea,15,13,1025,0,0,9,7
+Juan Mata,Manchester United,19,8,753,0,2,8,2
+Nemanja Matic,Manchester United,21,18,1583,0,2,5,2
+Sergio Romero,Manchester United,0,0,0,0,0,0,0
+Luke Shaw,Manchester United,24,20,1734,0,0,7,5
+Axel Tuanzebe,Manchester United,5,2,187,0,0,0,0
+Aaron Wan-Bissaka,Manchester United,35,34,3072,0,4,5,1
+David de Gea Quintana,Manchester United,38,38,3420,0,0,0,0
+Phil Bardsley,Burnley,21,21,1890,0,1,7,4
+Jack Cork,Burnley,30,30,2616,0,0,10,6
+Ben Gibson,Burnley,0,0,0,0,0,0,0
+Kevin Long,Burnley,8,6,562,0,0,1,0
+Matthew Lowton,Burnley,17,17,1530,0,1,1,0
+Nick Pope,Burnley,38,38,3420,0,0,0,0
+Etienne Capoue,Watford,30,30,2632,0,3,13,1
+Craig Cathcart,Watford,29,28,2490,0,0,1,1
+Francisco Femenía Far,Watford,28,26,2241,0,0,4,1
+Ben Foster,Watford,38,38,3420,0,0,1,1
+José Holebas,Watford,14,11,1024,0,0,5,3
+Daryl Janmaat,Watford,8,7,608,0,1,2,0
+Christian Kabasele,Watford,27,26,2252,0,2,4,1
+Isaac Success Ajayi,Watford,5,0,65,0,0,1,1
+Heurelho da Silva Gomes,Watford,0,0,0,0,0,0,0
+Sead Kolašinac,Arsenal,26,19,1699,0,2,3,0
+Charlie Taylor,Burnley,24,22,1946,0,1,1,0
+Arthur Masuaku,West Ham United,17,10,932,0,1,5,2
+Kevin Danso,Southampton,6,3,276,0,1,1,0
+Fraser Forster,Southampton,0,0,0,0,0,0,0
+Andy Lonergan,Liverpool,0,0,0,0,0,0,0
+Albian Ajeti,West Ham United,9,0,132,0,0,1,0
+Domingos Quina,Watford,4,0,18,0,0,1,1
+Keinan Davis,Aston Villa,18,4,538,0,0,15,5
+Jack Stacey,Bournemouth,19,17,1541,0,2,5,2
+Fernando Luiz Rosa,Manchester City,30,26,2399,0,1,13,2
+Ben Davies,Tottenham Hotspur,18,16,1431,0,0,3,1
+Christian Fuchs,Leicester City,11,8,769,0,0,4,1
+Frédéric Guilbert,Aston Villa,25,22,2041,0,2,6,3
+Djibril Sidibé,Everton,25,18,1820,0,4,7,3
+Maarten Stekelenburg,Everton,0,0,0,0,0,0,0
+Timm Klose,Norwich City,7,7,585,0,0,1,0
+Nampalys Mendy,Leicester City,7,4,291,0,0,1,1
+Nathaniel Chalobah,Watford,22,10,926,0,1,6,0
+Caoimhin Kelleher,Liverpool,0,0,0,0,0,0,0
+Christian Atsu,Newcastle United,19,6,741,0,3,4,1
+Tahith Chong,Manchester United,3,0,34,0,0,1,0
+Marcos Rojo,Manchester United,3,1,121,0,0,1,0
+Daniel N'Lundulu,Southampton,0,0,0,0,0,0,0
+Billy Gilmour,Chelsea,6,2,192,0,0,1,0
+Christoph Zimmermann,Norwich City,17,16,1431,0,1,5,1
+Mamadou Sakho,Crystal Palace,14,11,931,0,0,0,0
+Daniel Drinkwater,Aston Villa,5,5,322,0,0,2,0
+Fabian Delph,Everton,16,13,1190,0,0,0,0
+Phil Jones,Manchester United,2,2,135,0,0,2,1
+Frederico Rodrigues de Paula Santos,Manchester United,29,23,2159,0,0,30,10
+Jairo Riedewald,Crystal Palace,17,7,764,0,0,1,0
+Steven Alzate,Brighton and Hove Albion,19,12,1183,0,0,7,3
+Tudor Cristian Băluţă,Brighton and Hove Albion,0,0,0,0,0,0,0
+Maximilian Kilman,Wolverhampton Wanderers,3,2,184,0,0,0,0
+Philip Heise,Norwich City,0,0,0,0,0,0,0
+Adam Idah,Norwich City,12,1,221,0,0,5,2
+Michael McGovern,Norwich City,2,1,158,0,0,0,0
+Lewis Cook,Bournemouth,27,14,1345,0,0,5,2
+Dimitri Foulquier,Watford,3,1,58,0,0,0,0
+Adrian Mariappa,Watford,20,15,1510,0,0,2,0
+Marvelous Nakamba,Aston Villa,29,19,1835,0,0,7,1
+Alfie Whiteman,Tottenham Hotspur,0,0,0,0,0,0,0
+Eric García,Manchester City,13,8,790,0,0,2,1
+Benjamin Mendy,Manchester City,19,18,1496,0,2,3,1
+Kieron Freeman,Sheffield United,2,0,6,0,0,0,0
+Andy Carroll,Newcastle United,19,4,618,0,4,10,3
+Dejan Lovren,Liverpool,10,9,777,0,1,4,1
+Leon Clarke,Sheffield United,2,0,33,0,0,1,0
+Ezequiel Schelotto,Brighton and Hove Albion,8,4,362,0,0,2,1
+Arnaut Danjuma Groeneveld,Bournemouth,14,6,628,0,0,11,4
+Simon Francis,Bournemouth,15,10,965,0,0,0,0
+Reece James,Chelsea,24,16,1513,0,2,12,3
+Harry Lewis,Southampton,0,0,0,0,0,0,0
+Rob Holding,Arsenal,8,6,581,0,0,2,0
+Juan Foyth,Tottenham Hotspur,4,1,66,0,0,0,0
+Akin Famewo,Norwich City,1,0,1,0,0,0,0
+Archie Mair,Norwich City,0,0,0,0,0,0,0
+Harvey Elliott,Liverpool,2,0,7,0,0,0,0
+David Martin,West Ham United,5,4,435,0,0,0,0
+Lloyd Kelly,Bournemouth,8,7,638,0,0,0,0
+José Diogo Dalot Teixeira,Manchester United,4,1,66,0,0,1,0
+Leighton Baines,Everton,8,4,401,0,0,1,0
+Beni Baningime,Everton,0,0,0,0,0,0,0
+Brandon Austin,Tottenham Hotspur,0,0,0,0,0,0,0
+Stephen Henderson,Crystal Palace,0,0,0,0,0,0,0
+James Garner,Manchester United,1,0,8,0,0,0,0
+Taylor Perry,Wolverhampton Wanderers,0,0,0,0,0,0,0
+Troy Parrott,Tottenham Hotspur,2,0,6,0,0,0,0
+Kouassi Ryan Sessegnon,Tottenham Hotspur,6,4,342,0,0,0,0
+Michel Vorm,Tottenham Hotspur,0,0,0,0,0,0,0
+Anthony Gordon,Everton,11,4,440,0,1,4,1
+Ørjan Håskjold Nyland,Aston Villa,7,5,537,0,0,0,0
+Scott Carson,Manchester City,0,0,0,0,0,0,0
+Shkodran Mustafi,Arsenal,15,13,1205,0,1,9,4
+Ayotomiwa Dele-Bashiru,Watford,0,0,0,0,0,0,0
+Michael Verrips,Sheffield United,0,0,0,0,0,0,0
+Lee Grant,Manchester United,0,0,0,0,0,0,0
+Gavin Kilkenny,Bournemouth,0,0,0,0,0,0,0
+Christian Saydee,Bournemouth,0,0,0,0,0,0,0
+Luke Cundle,Wolverhampton Wanderers,0,0,0,0,0,0,0
+Owen Otasowie,Wolverhampton Wanderers,0,0,0,0,0,0,0
+Nathan Holland,West Ham United,2,0,31,0,0,1,1
+Anthony Driscoll-Glennon,Burnley,0,0,0,0,0,0,0
+Mace Goodridge,Burnley,0,0,0,0,0,0,0
+Neco Williams,Liverpool,6,3,230,0,0,2,1
+Tyrick Mitchell,Crystal Palace,4,2,193,0,0,0,0
+Sam Woods,Crystal Palace,0,0,0,0,0,0,0
+Brandon Pierrick,Crystal Palace,2,0,13,0,0,0,0
+Japhet Tanganga,Tottenham Hotspur,6,6,526,0,0,2,1
+Joseph Anang,West Ham United,0,0,0,0,0,0,0
+William Smallbone,Southampton,9,4,393,0,2,4,0
+Tariq Lamptey,Brighton and Hove Albion,9,7,620,0,1,1,0
+Tyreece John-Jules,Arsenal,0,0,0,0,0,0,0
+Oskar Buur,Wolverhampton Wanderers,0,0,0,0,0,0,0
+Nya Kirby,Crystal Palace,0,0,0,0,0,0,0
+Nathaniel Phillips,Liverpool,0,0,0,0,0,0,0
+Bernardo Costa Da Rosa,West Ham United,0,0,0,0,0,0,0
+Gonçalo Bento Soares Cardoso,West Ham United,0,0,0,0,0,0,0
+Jake Eastwood,Sheffield United,0,0,0,0,0,0,0
+Thomas Allan,Newcastle United,0,0,0,0,0,0,0
+Kelland Watts,Newcastle United,1,0,16,0,0,0,0
+Abd-Al-Ali Morakinyo Olaposi Koiki,Burnley,0,0,0,0,0,0,0
+Takumi Minamino,Liverpool,10,2,242,0,0,5,2
+Sam Surridge,Bournemouth,4,0,25,0,0,2,0
+Mark Travers,Bournemouth,1,1,90,0,0,0,0
+Lovre Kalinić,Aston Villa,0,0,0,0,0,0,0
+Indiana Vassilev,Aston Villa,4,0,47,0,0,1,0
+Ignacio Pussetto,Watford,7,0,67,0,0,0,0
+Gedson Carvalho Fernandes,Tottenham Hotspur,7,0,62,0,0,0,0
+Darren Randolph,West Ham United,2,2,180,0,0,0,0
+José Reina,Aston Villa,12,12,1080,0,0,0,0
+Bruno André Cavaco Jordão,Wolverhampton Wanderers,1,0,6,0,0,0,0
+Lukas Rupp,Norwich City,12,8,699,0,0,3,2
+Giovanni McGregor,Crystal Palace,0,0,0,0,0,0,0
+Eric Bailly,Manchester United,4,1,148,0,0,0,0
+João Pedro Junqueira de Jesus,Watford,3,0,22,0,0,1,0
+Nabil Bentaleb,Newcastle United,12,8,749,0,0,2,0
+Jack Robinson,Sheffield United,6,6,505,0,0,0,0
+Josh Brownhill,Burnley,10,9,806,0,0,4,0
+Odion Ighalo,Manchester United,11,0,92,0,0,6,4
+Ruben Loftus-Cheek,Chelsea,7,2,205,0,1,4,0
+Matty James,Leicester City,1,0,5,0,0,0,0
+Ki-Jana Hoever,Liverpool,0,0,0,0,0,0,0
+João Manuel Neves Virgínia,Everton,0,0,0,0,0,0,0
+Pablo Marí,Arsenal,2,2,114,0,0,0,0
+Alexis Mac Allister,Brighton and Hove Albion,9,4,352,0,0,4,1
+Faustino Anjorin,Chelsea,1,0,19,0,0,1,0
+Armando Broja,Chelsea,1,0,4,0,0,0,0
+Jack Rodwell,Sheffield United,1,0,15,0,0,0,0
+Nathan Tella,Southampton,1,0,2,0,0,1,1
+Josh Martin,Norwich City,5,0,32,0,0,1,1
+Harvey White,Tottenham Hotspur,0,0,0,0,0,0,0
+Zech Medley,Arsenal,0,0,0,0,0,0,0
+Alexandre Nascimento Costa Silva,West Ham United,0,0,0,0,0,0,0
+Ben Johnson,West Ham United,3,3,270,0,0,1,0
+Nikola Tavares,Crystal Palace,0,0,0,0,0,0,0
+Richairo Zivkovic,Sheffield United,5,0,107,0,0,0,0
+Jarrad Branthwaite,Everton,4,2,299,0,0,0,0
+Jimmy Dunne,Burnley,0,0,0,0,0,0,0
+Lukas Jensen,Burnley,0,0,0,0,0,0,0
+Bailey Peacock-Farrell,Burnley,0,0,0,0,0,0,0
+Bobby Thomas,Burnley,0,0,0,0,0,0,0
+Max Thompson,Burnley,1,0,2,0,0,0,0
+Jake Vokins,Southampton,1,1,90,0,0,1,0
+Matt Macey,Arsenal,0,0,0,0,0,0,0
+Matthew Smith,Arsenal,0,0,0,0,0,0,0
+Tommy Doyle,Manchester City,1,0,15,0,0,1,1
+Taylor Harwood-Bellis,Manchester City,0,0,0,0,0,0,0
+Cole Palmer,Manchester City,0,0,0,0,0,0,0
+Adalberto Peñaranda,Watford,0,0,0,0,0,0,0
+Alexandre Jankewitz,Southampton,0,0,0,0,0,0,0
+Jordan Thomas,Norwich City,1,0,1,0,0,0,0
+Alfie Lewis,West Ham United,0,0,0,0,0,0,0
+Leonardo Campana,Wolverhampton Wanderers,0,0,0,0,0,0,0
+Josh Benson,Burnley,0,0,0,0,0,0,0
+Dennis Cirkin,Tottenham Hotspur,0,0,0,0,0,0,0
+Darnell Johnson,Leicester City,0,0,0,0,0,0,0
+Timothy Fosu-Mensah,Manchester United,3,2,136,0,0,1,0
+Conor Coventry,West Ham United,0,0,0,0,0,0,0
+Alex Cochrane,Brighton and Hove Albion,0,0,0,0,0,0,0

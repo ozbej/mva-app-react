@@ -1,0 +1,49 @@
+.importContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.randomImport, .fileImport, .predefinedImport {
+  width: 25%;
+  padding: 1rem;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  min-height: 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.inputContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.inputContainer input {
+  width: 40%;
+}
+
+.fileImport form, .predefinedImport form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.predefinedImport select {
+  width: 50%;
+}
+
+.randomImport form button,.fileImport form button, .predefinedImport form button {
+  margin-top: 0.5rem;
+  width: 50%;
+}

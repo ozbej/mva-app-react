@@ -1,21 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import Dexie from 'dexie';
-
 import FileUploader from './FileUploader';
+import DatasetUploader from './DatasetUploader';
 import TableView from './TableView';
 import ParallelCoordinatesKanva from './ParallelCoordinatesKanva';
-
-let randomData: any[] = [];
-
-for (let i: number = 0; i < 100; i++) {
-  randomData.push(Array.from({length: 10}, () => Math.floor(Math.random() * 200)));
-}
+import "../styles/Home.css"
 
 function Home() {
  const [header, setHeader] = useState([]) as any[];
  const [rows, setRows] = useState([]) as any[];
  const [data, setData] = useState([]) as any[];
  const [dataHeaders, setDataHeaders] = useState([]) as any[];
+ const [randomData, setRandomData] = useState({rows: 100, dimensions: 20}) as any;
 
  let db: Dexie = new Dexie("dataset");
 
@@ -59,11 +55,9 @@ function Home() {
 
   // Set indexing of db to all columns
   let indexString: string = "++id";
-  for (let header of headerRow) {
-      indexString += `, ${header.title}`;
-  }
+  for (let i: number = 0; i < headerRow.length; i++)
+      indexString += `, $${i}`; // Add $ since IndexedDB columns can not start with a number
 
-  
   db.version(1).stores({
     rows: indexString,
     headerRow: "++id, title, type"
@@ -86,6 +80,9 @@ function Home() {
 
  // Function that filters data
  function filterData(header: any[], rows: any[]) {
+
+  console.log("Header", header);
+
   let dataTemp: any[] = [];
   let currRow: number[] = [];
   let dataHeadersTemp: string[] = [];
@@ -106,10 +103,58 @@ function Home() {
   setData(dataTemp);
  }
 
+ const importRandomData = (e: any): void => {
+  e.preventDefault();
+
+  let random: any[] = [];
+  for (let i: number = 0; i < randomData.rows; i++)
+    random.push(Array.from({length: randomData.dimensions}, () => Math.floor(Math.random() * 100)));
+
+  let randomHeaders: string[] = [];
+  for (let i: number = 0; i < randomData.dimensions; i++)
+    randomHeaders.push(`Dim-${i+1}`);
+
+  setData(random);
+  setDataHeaders(randomHeaders);
+ };
+
   return (
     <div className="App">
       <h1>MVA App</h1>
-      <FileUploader datasetUploaded={datasetUploaded} />
+      <div className="importContainer">
+        <div className="randomImport">
+          <b>Import random data:</b>
+          <form className="formContainer">
+            <div className="inputContainer">
+              <label htmlFor="randomRows">No. of rows</label>
+              <input
+              type="number"
+              value={randomData.rows}
+              onChange={(e) => setRandomData({rows: e.target.value, dimensions: randomData.dimensions})}
+              id="randomRows" />
+            </div>
+            <div className="inputContainer">
+              <label htmlFor="randomDimensions">No. of dimensions</label>
+              <input
+              type="number"
+              value={randomData.dimensions} 
+              onChange={(e) => setRandomData({rows: randomData.rows, dimensions: e.target.value})}
+              id="randomDimensions" />
+            </div>
+            <button style={{height: "50%"}} onClick={(e) => {importRandomData(e);}}>
+              IMPORT RANDOM
+            </button>
+          </form>
+        </div>
+        <div className="fileImport">
+          <b>Import custom data:</b>
+          <FileUploader datasetUploaded={datasetUploaded} />
+        </div>
+        <div className="predefinedImport">
+          <b>Import pre-defined data:</b>
+          <DatasetUploader datasetUploaded={datasetUploaded} />
+        </div>
+      </div>
       <TableView header={header} rows={rows}/>
       {data && data.length !== 0 ? <ParallelCoordinatesKanva data={data} dataHeaders={dataHeaders} /> : <></>}
     </div>
