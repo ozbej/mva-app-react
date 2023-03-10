@@ -5,6 +5,8 @@
   "dependencies": {
     "@babylonjs/core": "^5.43.0",
     "@babylonjs/gui": "^5.43.0",
+    "@react-three/drei": "^9.57.1",
+    "@react-three/fiber": "^8.12.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -12,6 +14,7 @@
     "@types/node": "^16.18.11",
     "@types/react": "^18.0.26",
     "@types/react-dom": "^18.0.10",
+    "@types/three": "^0.149.0",
     "afterframe": "^1.0.2",
     "babylonjs": "^5.43.0",
     "dexie": "^3.2.2",
@@ -24,6 +27,7 @@
     "react-konva": "^18.2.3",
     "react-router-dom": "^6.8.0",
     "react-scripts": "^5.0.1",
+    "three": "^0.150.1",
     "typescript": "^4.9.4",
     "web-vitals": "^2.1.4"
   },

@@ -8,7 +8,7 @@ import ParalellCoordinatesBabylonPage from "./pages/parallel-coordinates/babylon
 
 let randomData: any[] = [];
 
-for (let i: number = 0; i < 1000; i++) {
+for (let i: number = 0; i < 100; i++) {
   randomData.push(Array.from({length: 20}, () => Math.floor(Math.random() * 200)));
 }
 
