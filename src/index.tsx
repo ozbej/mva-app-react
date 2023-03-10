@@ -1,10 +1,10 @@
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./pages/Layout";
-import HomePage from "./pages/HomePage";
-import ParallelCoordinatesKanvaPage from "./pages/ParalellCoordinatesKanvaPage";
-import ParalellCoordinatesCanvas2dPage from "./pages/ParalellCoordinatesCanvas2dPage";
-import ParalellCoordinatesBabylonPage from "./pages/ParalellCoordinatesBabylonPage";
+import HomePage from "./pages/home/HomePage";
+import ParallelCoordinatesKanvaPage from "./pages/parallel-coordinates/kanva/ParalellCoordinatesKanvaPage";
+import ParalellCoordinatesCanvas2dPage from "./pages/parallel-coordinates/canvas2d/ParalellCoordinatesCanvas2dPage";
+import ParalellCoordinatesBabylonPage from "./pages/parallel-coordinates/babylon/ParalellCoordinatesBabylonPage";
 
 let randomData: any[] = [];
 

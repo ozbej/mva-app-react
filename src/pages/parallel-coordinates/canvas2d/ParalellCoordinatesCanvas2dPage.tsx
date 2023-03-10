@@ -1,5 +1,5 @@
 import React from 'react';
-import ParallelCoordinatesCanvas2d from '../components/ParallelCoordinatesCanvas2d';
+import ParallelCoordinatesCanvas2d from '../../../components/parallel-coordinates/canvas2d/ParallelCoordinatesCanvas2d';
 
 function ParalellCoordinatesCanvas2dPage(props: any) {
     return (

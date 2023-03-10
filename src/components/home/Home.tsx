@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import Dexie from 'dexie';
-import FileUploader from './FileUploader';
-import DatasetUploader from './DatasetUploader';
-import TableView from './TableView';
-import ParallelCoordinatesKanva from './ParallelCoordinatesKanva';
-import "../styles/Home.css"
+import FileUploader from '../file-uploader/FileUploader';
+import DatasetUploader from '../dataset-uploader/DatasetUploader';
+import TableView from '../table-view/TableView';
+import ParallelCoordinatesKanva from '../parallel-coordinates/kanva/ParallelCoordinatesKanva';
+import ParallelCoordinatesThree from '../parallel-coordinates/threejs/ParallelCoordinatesThree';
+import "./Home.css"
 
 function Home() {
  const [header, setHeader] = useState([]) as any[];
@@ -80,9 +81,6 @@ function Home() {
 
  // Function that filters data
  function filterData(header: any[], rows: any[]) {
-
-  console.log("Header", header);
-
   let dataTemp: any[] = [];
   let currRow: number[] = [];
   let dataHeadersTemp: string[] = [];
@@ -156,7 +154,8 @@ function Home() {
         </div>
       </div>
       <TableView header={header} rows={rows}/>
-      {data && data.length !== 0 ? <ParallelCoordinatesKanva data={data} dataHeaders={dataHeaders} /> : <></>}
+      {/*data && data.length !== 0 ? <ParallelCoordinatesKanva data={data} dataHeaders={dataHeaders} /> : <></>*/}
+      <ParallelCoordinatesThree />
     </div>
   );
 }

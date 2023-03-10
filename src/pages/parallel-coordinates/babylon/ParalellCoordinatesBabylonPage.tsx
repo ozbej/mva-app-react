@@ -1,5 +1,5 @@
 import React from 'react';
-import ParallelCoordinatesBabylon from '../components/ParallelCoordinatesBabylon';
+import ParallelCoordinatesBabylon from '../../../components/parallel-coordinates/babylon/ParallelCoordinatesBabylon';
 
 function ParallelCoordinatesBabylonPage(props: any) {
   return (
