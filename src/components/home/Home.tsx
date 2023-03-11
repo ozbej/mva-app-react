@@ -3,7 +3,7 @@ import Dexie from 'dexie';
 import FileUploader from '../file-uploader/FileUploader';
 import DatasetUploader from '../dataset-uploader/DatasetUploader';
 import TableView from '../table-view/TableView';
-import ParallelCoordinatesBabylon from '../parallel-coordinates/babylon/ParallelCoordinatesBabylon';
+import ParallelCoordinatesPixi from '../parallel-coordinates/pixijs/ParallelCoordinatesPixi';
 import "./Home.css"
 
 function Home() {
@@ -153,8 +153,8 @@ function Home() {
         </div>
       </div>
       <TableView header={header} rows={rows}/>
-      {/*data && data.length !== 0 ? <ParallelCoordinatesKanva data={data} dataHeaders={dataHeaders} /> : <></>*/}
-      {data && data.length !== 0 ? <ParallelCoordinatesBabylon data={data} dataHeaders={dataHeaders} /> : <></>}
+      {/* {data && data.length !== 0 ? <ParallelCoordinatesKanva data={data} dataHeaders={dataHeaders} /> : <></>} */}
+      {data && data.length !== 0 ? <ParallelCoordinatesPixi data={data} dataHeaders={dataHeaders} /> : <></>}
     </div>
   );
 }

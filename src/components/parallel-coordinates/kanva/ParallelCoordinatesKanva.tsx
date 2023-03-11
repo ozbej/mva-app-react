@@ -1,12 +1,14 @@
 import { KonvaEventObject } from 'konva/lib/Node';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Stage, Layer, Group, Line, Text, RegularPolygon } from 'react-konva';
 
 const ParallelCoordinatesKanva = (props: any) => {
   const x = 70;
   const y = 50;
-  const width: number = 1900;
+  const width: number = window.innerWidth - 50;
   const height: number = 600;
+
+  const offscreenCanvasRef = useRef(new OffscreenCanvas(width, height));
 
   const [axis, setAxis] = useState([]) as any[]; // Axis lines
   const [axisScales, setAxisScales] = useState([]) as any[]; // Axis scales
@@ -113,7 +115,7 @@ const ParallelCoordinatesKanva = (props: any) => {
 
   return <>
     <p>KanvaJS:</p>
-    <Stage width={width} height={height+100}>
+    <Stage width={width} height={height+100} canvas={offscreenCanvasRef.current}>
       <Layer>
         <Group>
           {linesAll.map((line: any, i: number) => {
@@ -136,8 +138,8 @@ const ParallelCoordinatesKanva = (props: any) => {
               stroke={line.color}
               strokeWidth={line.width}
               opacity={line.opacity}
-              onMouseOver={handleMouseOver}
-              onMouseLeave={handleMouseLeave}
+              //onMouseOver={handleMouseOver}
+              //onMouseLeave={handleMouseLeave}
             />
           })}
         </Group>

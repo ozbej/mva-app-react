@@ -5,6 +5,7 @@
   "dependencies": {
     "@babylonjs/core": "^5.43.0",
     "@babylonjs/gui": "^5.43.0",
+    "@pixi/react": "^7.0.2",
     "@react-three/drei": "^9.57.1",
     "@react-three/fiber": "^8.12.0",
     "@testing-library/jest-dom": "^5.16.5",
@@ -20,6 +21,7 @@
     "dexie": "^3.2.2",
     "dexie-react-hooks": "^1.1.1",
     "konva": "^8.4.0",
+    "pixi.js": "^7.1.4",
     "react": "^18.2.0",
     "react-babylonjs": "^3.1.15",
     "react-dom": "^18.2.0",
