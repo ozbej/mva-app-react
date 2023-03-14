@@ -1,9 +1,17 @@
 import React from 'react';
 import Home from '../../components/home/Home';
 
-function HomePage() {
+type homePageProps = {
+    updateRandomData: any;
+}
+
+function HomePage(props: homePageProps) {
+    function updateRandomData(arr: any) {
+        props.updateRandomData(arr);
+    }
+
     return (
-        <Home />
+        <Home updateRandomData={updateRandomData} />
     );
 }
 

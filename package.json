@@ -5,7 +5,7 @@
   "dependencies": {
     "@babylonjs/core": "^5.43.0",
     "@babylonjs/gui": "^5.43.0",
-    "@pixi/react": "^7.0.2",
+    "@pixi/react": "^7.0.3",
     "@react-three/drei": "^9.57.1",
     "@react-three/fiber": "^8.12.0",
     "@testing-library/jest-dom": "^5.16.5",

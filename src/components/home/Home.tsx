@@ -6,7 +6,11 @@ import TableView from '../table-view/TableView';
 import ParallelCoordinatesPixi from '../parallel-coordinates/pixijs/ParallelCoordinatesPixi';
 import "./Home.css"
 
-function Home() {
+type homeProps = {
+  updateRandomData: any;
+}
+
+function Home(props: homeProps) {
  const [header, setHeader] = useState([]) as any[];
  const [rows, setRows] = useState([]) as any[];
  const [data, setData] = useState([]) as any[];
@@ -113,6 +117,8 @@ function Home() {
 
   setData(random);
   setDataHeaders(randomHeaders);
+
+  props.updateRandomData(random);
  };
 
   return (
