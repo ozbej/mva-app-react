@@ -1,20 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import Dexie from 'dexie';
-import FileUploader from '../file-uploader/FileUploader';
-import DatasetUploader from '../dataset-uploader/DatasetUploader';
-import TableView from '../table-view/TableView';
-import ParallelCoordinatesPixi from '../parallel-coordinates/pixijs/ParallelCoordinatesPixi';
+import FileUploader from '../../components/file-uploader/FileUploader';
+import DatasetUploader from '../../components/dataset-uploader/DatasetUploader';
+import TableView from '../../components/table-view/TableView';
 import "./Home.css"
 
 type homeProps = {
-  updateRandomData: any;
+  onDataChange: any;
 }
 
 function Home(props: homeProps) {
  const [header, setHeader] = useState([]) as any[];
  const [rows, setRows] = useState([]) as any[];
- const [data, setData] = useState([]) as any[];
- const [dataHeaders, setDataHeaders] = useState([]) as any[];
+
+ // Random data info
  const [randomData, setRandomData] = useState({rows: 100, dimensions: 20}) as any;
 
  let db: Dexie = new Dexie("dataset");
@@ -46,7 +45,6 @@ function Home(props: homeProps) {
     db.table('headerRow').toArray().then(data => {
       headersTemp = data;
       setHeader(headersTemp);
-      filterData(headersTemp, rowsTemp);
     });
   })
   .catch(err => console.log(err.message));
@@ -73,52 +71,70 @@ function Home(props: homeProps) {
 
     // Insert headerRow and rows to db
     db.table('headerRow').bulkAdd(headerRow);
-    db.table('rows').bulkAdd(rows)
+    db.table('rows').bulkAdd(rows);
 
     setHeader(headerRow);
-    const rowsTemp: any[] = rows.map(obj => Object.values(obj));
+    const rowsTemp: any[][] = rows.map(obj => Object.values(obj));
     setRows(rowsTemp)
-    filterData(headerRow, rowsTemp);
-  });
- }
 
- // Function that filters data
- function filterData(header: any[], rows: any[]) {
-  let dataTemp: any[] = [];
-  let currRow: number[] = [];
-  let dataHeadersTemp: string[] = [];
-
-  header.forEach((item: any, i: number) => {
-    if (item.type === "number") dataHeadersTemp.push(item.title);
-  })
-  setDataHeaders(dataHeadersTemp);
-
-  rows.forEach((row: any, i: number) => {
-    currRow = [];
-    row.forEach((value: any, j: number) => {
-      if (header[j].type === "number") currRow.push(Number(value));
+    // Filter non-number columns
+    let headerRowFiltered: any[] = [];
+    headerRow.forEach((item: any, i: number) => {
+      if (item.type === "number") headerRowFiltered.push(item);
     })
-    dataTemp.push(currRow);
-  });
+    let dataFiltered: any[] = [];
+    let currRow: number[] = [];
+    rowsTemp.forEach((row: any, i: number) => {
+      currRow = [];
+      row.forEach((value: any, j: number) => {
+        if (headerRow[j].type === "number") currRow.push(Number(value));
+      })
+      dataFiltered.push(currRow);
+    });
 
-  setData(dataTemp);
+    props.onDataChange({data: dataFiltered, headerRow: headerRowFiltered});
+  });
  }
 
- const importRandomData = (e: any): void => {
+ const importRandomData = async (e: any) => {
   e.preventDefault();
 
-  let random: any[] = [];
+  let rows: any[] = [];
   for (let i: number = 0; i < randomData.rows; i++)
-    random.push(Array.from({length: randomData.dimensions}, () => Math.floor(Math.random() * 100)));
+    rows.push(Array.from({length: randomData.dimensions}, () => Math.floor(Math.random() * 100)));
 
-  let randomHeaders: string[] = [];
+  let headerRow: any[] = [];
   for (let i: number = 0; i < randomData.dimensions; i++)
-    randomHeaders.push(`Dim-${i+1}`);
+  headerRow.push({title: `Dim-${i+1}`, type: "number"});
 
-  setData(random);
-  setDataHeaders(randomHeaders);
+  // Close previous db and delete it
+  await db.close();
+  await db.delete();
 
-  props.updateRandomData(random);
+  // Set indexing of db to all columns
+  let indexString: string = "++id";
+  for (let i: number = 0; i < headerRow.length; i++)
+      indexString += `, $${i}`; // Add $ since IndexedDB columns can not start with a number
+
+  db.version(1).stores({
+    rows: indexString,
+    headerRow: "++id, title, type"
+  });
+
+  db.open()
+  .then(() => {
+    console.log("DB re-opened")
+
+    // Insert headerRow and rows to db
+    db.table('headerRow').bulkAdd(headerRow);
+    db.table('rows').bulkAdd(rows);
+
+    setHeader(headerRow);
+    const rowsTemp: any[][] = rows.map(obj => Object.values(obj));
+    setRows(rowsTemp)
+
+    props.onDataChange({data: rowsTemp, headerRow: headerRow});
+  });
  };
 
   return (
@@ -159,8 +175,6 @@ function Home(props: homeProps) {
         </div>
       </div>
       <TableView header={header} rows={rows}/>
-      {/* {data && data.length !== 0 ? <ParallelCoordinatesKanva data={data} dataHeaders={dataHeaders} /> : <></>} */}
-      {data && data.length !== 0 ? <ParallelCoordinatesPixi data={data} dataHeaders={dataHeaders} /> : <></>}
     </div>
   );
 }

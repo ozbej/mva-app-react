@@ -1,10 +1,31 @@
-import React from 'react';
-import ParallelCoordinatesCanvas2d from '../../../components/parallel-coordinates/canvas2d/ParallelCoordinatesCanvas2d';
+import React, { useRef, useEffect } from 'react';
 
-function ParalellCoordinatesCanvas2dPage(props: any) {
-    return (
-      <ParallelCoordinatesCanvas2d data={props.data} />
-    );
-}
+const ParallelCoordinatesCanvas2d = (props: any) => {
+  const ref: any = useRef(null);
 
-export default ParalellCoordinatesCanvas2dPage;
+  useEffect(() => {
+    const canvas: any = ref.current;
+    const context: any = canvas.getContext("2d");
+
+    props.data.forEach((dataItem: number[], i: number) => {
+      context.lineWidth = 1;
+      context.beginPath();
+      for (let i = 0; i < dataItem.length; i++) {
+        context.lineTo(i*100, dataItem[i]);
+        context.moveTo(i*100, dataItem[i]);
+        context.stroke();
+        context.closePath();
+      }
+    });
+  })
+
+  return <>
+    <p>Canvas2d:</p>
+    <canvas
+    ref={ref}
+    width={1000}
+    height={200} />
+  </>
+};
+
+export default ParallelCoordinatesCanvas2d;

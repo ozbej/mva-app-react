@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState, useCallback } from 'react'
 import { Stage, Graphics, Container } from '@pixi/react';
 import * as PIXI from 'pixi.js';
+import { DataInterface } from '../../../interfaces/data.interface';
 
 type LineProps = {
   points: number[],
@@ -14,6 +15,10 @@ type FilterTriangleProps = {
   key: string,
   type: string
 };
+
+type ParallelCoordinatesProps = {
+  data: DataInterface;
+} 
 
 function getMinMaxByColumn(arr: any[]): any[] {
   const numCols = arr[0].length;
@@ -94,7 +99,7 @@ const FilterTriangle = ({ points, color = 0x000000, key, type }: FilterTriangleP
   );
 }
 
-function ParallelCoordinatesPixi(props: any) {
+function ParallelCoordinatesPixiPage(props: ParallelCoordinatesProps) {
   const width = window.innerWidth;
   const height = 600;
   const xOffset = 50;
@@ -105,9 +110,9 @@ function ParallelCoordinatesPixi(props: any) {
 
   useEffect(() => {
 
-    const numAxes = props.data[0].length; // Set the number of axes
+    const numAxes = props.data.data[0].length; // Set the number of axes
     const axesSpacing = width / (numAxes + 1); // Set the spacing between axes
-    const axesScales: any[] = getMinMaxByColumn(props.data); // Set the scales of all axes
+    const axesScales: any[] = getMinMaxByColumn(props.data.data); // Set the scales of all axes
 
     // Set and draw all axes
     let axes: any[] = [];
@@ -115,7 +120,7 @@ function ParallelCoordinatesPixi(props: any) {
       axes.push({
         key: i,
         points: [xOffset + i * axesSpacing, yOffset, xOffset + i * axesSpacing, yOffset + height],
-        text: props && props.dataHeaders ? props.dataHeaders[i] : `Dim-${i+1}`,
+        text: props && props.data.headerRow ? props.data.headerRow[i] : `Dim-${i+1}`,
         limitUpper: yOffset,
         limitLower: yOffset + height,
       })
@@ -124,7 +129,7 @@ function ParallelCoordinatesPixi(props: any) {
 
     // Set the lines data points
     let lines: any[] = [];
-    props.data.forEach((line: number[], i: number) => {
+    props.data.data.forEach((line: number[], i: number) => {
       lines.push({
         key: i,
         points: calculateLine(line, numAxes, axesSpacing, axesScales, xOffset, yOffset, height),
@@ -159,4 +164,4 @@ function ParallelCoordinatesPixi(props: any) {
   );
 }
 
-export default ParallelCoordinatesPixi;
+export default ParallelCoordinatesPixiPage;

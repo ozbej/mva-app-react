@@ -6,17 +6,17 @@ function Navbar() {
   return (
     <nav>
       <ul>
-        <li>
+        <li key="1">
           <Link to="/">Home</Link>
         </li>
-        <li>
+        <li key="2">
           <Link to="/parallel-coordinates-kanva">Kanva PC</Link>
         </li>
-        <li>
-          <Link to="/parallel-coordinates-canvas2d">Canvas2d PC</Link>
-        </li>
-        <li>
+        <li key="3">
           <Link to="/parallel-coordinates-babylon">Babylon PC</Link>
+        </li>
+        <li key="4">
+          <Link to="/parallel-coordinates-pixijs">PixiJS PC</Link>
         </li>
       </ul>
     </nav>

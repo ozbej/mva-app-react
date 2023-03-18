@@ -2,37 +2,28 @@ import { useEffect, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./pages/Layout";
-import HomePage from "./pages/home/HomePage";
+import Home from "./pages/home/Home";
 import ParallelCoordinatesKanvaPage from "./pages/parallel-coordinates/kanva/ParalellCoordinatesKanvaPage";
-import ParalellCoordinatesCanvas2dPage from "./pages/parallel-coordinates/canvas2d/ParalellCoordinatesCanvas2dPage";
 import ParalellCoordinatesBabylonPage from "./pages/parallel-coordinates/babylon/ParalellCoordinatesBabylonPage";
-
-let randomDataInitial: any[] = [];
-
-for (let i: number = 0; i < 100; i++) {
-  randomDataInitial.push(Array.from({length: 20}, () => Math.floor(Math.random() * 200)));
-}
+import ParallelCoordinatesPixiPage from './pages/parallel-coordinates/pixijs/ParallelCoordinatesPixiPage';
+import { DataInterface } from './interfaces/data.interface';
 
 export default function App() {
 
-  const [randomData, setRandomData] = useState<any[]>([]);
+  const [data, setData] = useState<DataInterface>({data: [], headerRow: []});
 
-  useEffect(() => {
-    setRandomData(randomDataInitial);
-  }, [])
-
-  function updateRandomData(arr: any) {
-    setRandomData(arr);
-  }
+  const handleDataChange = (newData: DataInterface) => {
+    setData(newData);
+  };
 
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<HomePage updateRandomData={updateRandomData} />} />
-          <Route path="parallel-coordinates-kanva" element={<ParallelCoordinatesKanvaPage data={randomData} />} />
-          <Route path="parallel-coordinates-canvas2d" element={<ParalellCoordinatesCanvas2dPage data={randomData} />} />
-          <Route path="parallel-coordinates-babylon" element={<ParalellCoordinatesBabylonPage data={randomData} />} />
+          <Route index element={<Home onDataChange={handleDataChange} />} />
+          <Route path="parallel-coordinates-kanva" element={<ParallelCoordinatesKanvaPage data={data} />} />
+          <Route path="parallel-coordinates-babylon" element={<ParalellCoordinatesBabylonPage data={data.data} />} />
+          <Route path="parallel-coordinates-pixijs" element={<ParallelCoordinatesPixiPage data={data} />} />
         </Route>
       </Routes>
     </BrowserRouter>
