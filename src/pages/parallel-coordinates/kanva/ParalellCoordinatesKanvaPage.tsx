@@ -22,7 +22,7 @@ const ParallelCoordinatesKanva = (props: ParallelCoordinatesProps) => {
   const [linesFiltered, setLinesFiltered] = useState([]) as any[]; // Data lines
 
   useEffect(() => {
-    if (props && props.data && props.data.data) {
+    if (props?.data?.data[0]) {
       // Set the number of axes
       const numAxis = props.data.data[0].length;
 

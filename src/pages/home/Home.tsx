@@ -41,10 +41,27 @@ function Home(props: homeProps) {
         return Object.values(obj)
       });
       setRows(rowsTemp);
-    });
-    db.table('headerRow').toArray().then(data => {
-      headersTemp = data;
-      setHeader(headersTemp);
+      db.table('headerRow').toArray().then(data => {
+        headersTemp = data;
+        setHeader(headersTemp);
+
+        // Filter non-number columns
+        let headerRowFiltered: any[] = [];
+        headersTemp.forEach((item: any, i: number) => {
+          if (item.type === "number") headerRowFiltered.push(item);
+        })
+        let dataFiltered: any[] = [];
+        let currRow: number[] = [];
+        rowsTemp.forEach((row: any, i: number) => {
+          currRow = [];
+          row.forEach((value: any, j: number) => {
+            if (headersTemp[j].type === "number") currRow.push(Number(value));
+          })
+          dataFiltered.push(currRow);
+        });
+
+        props.onDataChange({data: dataFiltered, headerRow: headerRowFiltered});
+      });
     });
   })
   .catch(err => console.log(err.message));
